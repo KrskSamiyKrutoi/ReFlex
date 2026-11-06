@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0b0f17">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
-<title>Рефлекс — тренажёр реакции v1.10.4</title>
+<title>Рефлекс — тренажёр реакции v1.10.5</title>
 <style>
 :root{--a2:color-mix(in srgb,var(--a),#ff4d6d 40%);--bg:#0b0f17;--c:#151b27;--c2:#212a3b;--ln:#ffffff14;--t:#f3f0e8;--m:#8d97ab;--a:#ffb703;--g:#3ddc84;--r:#ff5d5d;--D:Unbounded,"Arial Black",Impact,sans-serif}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -150,7 +150,7 @@ h2::before{content:"";display:inline-block;width:4px;height:14px;background:var(
 </head>
 <body>
 <header>
-  <h1>РЕФЛЕКС<small>v1.10.4</small></h1>
+  <h1>РЕФЛЕКС<small>v1.10.5</small></h1>
   <div class="hg hn"><button class="btn s" id="lb"><span class="ico" id="ti"></span><span class="tx"> Лидеры</span></button><button class="btn s" id="ab"><span class="ico" id="ai"></span><span class="tx"> Достижения</span></button><button class="btn s" id="sb"><span class="ico" id="si"></span><span class="tx"> Настройки</span></button></div>
   <div class="hg r"><button class="btn" id="acc">Войти</button><button class="btn s" id="pf"><span class="ico" id="pi"></span><span id="pfl"></span></button></div>
   <i class="hb"><i id="xb"></i></i>
@@ -173,7 +173,7 @@ h2::before{content:"";display:inline-block;width:4px;height:14px;background:var(
     <h2>Цвет интерфейса</h2><label>Цвета открываются за уровни и достижения</label><div class="sws" id="prt" style="margin-top:8px"></div>
     <h2>Проверка связи</h2><div id="nsum"></div><button class="btn s" id="ntb">Запустить тест</button>
     <h2>Облако и коды</h2><p class="nt" id="cl"></p><input id="cdi" placeholder="Код переноса или промокод" maxlength="24"><button class="btn" id="cdb">Применить код</button><button class="btn s" id="cdm">Получить код переноса</button>
-    <h2>Данные</h2><label>Резервная копия защитит прогресс, если браузер очистит данные сайта</label><br><button class="btn s" id="bk1">Скопировать код прогресса</button><button class="btn s" id="bk2">Восстановить по коду</button><br><button class="btn s" id="rst">Сбросить прогресс</button></div></section>
+    <h2>Данные</h2><button class="btn s" id="rst">Сбросить прогресс</button></div></section>
   <section id="acs" hidden><div class="top"><button class="btn s bk" id="acb"></button><b>Достижения: <span id="acn"></span></b></div><div class="stage"><div class="ach" id="acl"></div></div></section>
   <section id="fds" hidden><div class="top"><button class="btn s bk" id="fdb"></button><b id="fdt"></b></div><div class="cards" id="cards"></div></section>
   <section id="lbs" hidden>
@@ -439,9 +439,6 @@ document.querySelectorAll('.bk').forEach(b=>b.innerHTML=ico('back',18)+' В ме
 const sync=()=>{const o=rdk('reflex1');if(o&&(o.rev||0)>(S.rev||0)){S=o;fixS();head();if(!$('#home').hidden)home()}};
 addEventListener('storage',e=>{if(e.key=='reflex1')sync()});document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync()});addEventListener('focus',sync);
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
-const expS=()=>{const o={...S};delete o.user;return btoa(unescape(encodeURIComponent(JSON.stringify(o))))};
-$('#bk1').onclick=()=>{const c=expS();(navigator.clipboard?navigator.clipboard.writeText(c).then(()=>toast('Код прогресса скопирован')):Promise.reject()).catch(()=>prompt('Скопируй код прогресса и сохрани его:',c))};
-$('#bk2').onclick=()=>{const c=prompt('Вставь код прогресса:');if(!c)return;try{const o=JSON.parse(decodeURIComponent(escape(atob(c.trim()))));if(typeof o.xp!='number'||!o.best)throw 0;o.user=S.user;o.rev=Math.max(o.rev||0,S.rev||0)+1;S=o;fixS();save();applyTh();head();sett();toast('Прогресс восстановлен')}catch(e){toast('Не удалось прочитать код')}};
 const clean=()=>{const o={...S};delete o.user;return o};
 let pTm=0;pushQ=()=>{clearTimeout(pTm);pTm=setTimeout(()=>pushSave(false),4000)};
 async function pushSave(force){if(!S.user||!ON())return;try{const r=await api('rx_save',{p_token:S.user.token,p_data:clean(),p_force:!!force});if(r&&r.conflict)adopt(r.data,'Найден более новый прогресс в облаке')}catch(e){}}
