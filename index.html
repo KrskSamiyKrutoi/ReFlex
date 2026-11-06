@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0b0f17">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
-<title>Рефлекс — тренажёр реакции v1.10.3</title>
+<title>Рефлекс — тренажёр реакции v1.10.4</title>
 <style>
 :root{--a2:color-mix(in srgb,var(--a),#ff4d6d 40%);--bg:#0b0f17;--c:#151b27;--c2:#212a3b;--ln:#ffffff14;--t:#f3f0e8;--m:#8d97ab;--a:#ffb703;--g:#3ddc84;--r:#ff5d5d;--D:Unbounded,"Arial Black",Impact,sans-serif}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -150,7 +150,7 @@ h2::before{content:"";display:inline-block;width:4px;height:14px;background:var(
 </head>
 <body>
 <header>
-  <h1>РЕФЛЕКС<small>v1.10.3</small></h1>
+  <h1>РЕФЛЕКС<small>v1.10.4</small></h1>
   <div class="hg hn"><button class="btn s" id="lb"><span class="ico" id="ti"></span><span class="tx"> Лидеры</span></button><button class="btn s" id="ab"><span class="ico" id="ai"></span><span class="tx"> Достижения</span></button><button class="btn s" id="sb"><span class="ico" id="si"></span><span class="tx"> Настройки</span></button></div>
   <div class="hg r"><button class="btn" id="acc">Войти</button><button class="btn s" id="pf"><span class="ico" id="pi"></span><span id="pfl"></span></button></div>
   <i class="hb"><i id="xb"></i></i>
@@ -172,6 +172,7 @@ h2::before{content:"";display:inline-block;width:4px;height:14px;background:var(
     <h2 style="margin-top:0">Звук</h2><button class="btn s" id="mu"></button><label>Громкость<input type="range" id="vo" min="0" max="100"></label>
     <h2>Цвет интерфейса</h2><label>Цвета открываются за уровни и достижения</label><div class="sws" id="prt" style="margin-top:8px"></div>
     <h2>Проверка связи</h2><div id="nsum"></div><button class="btn s" id="ntb">Запустить тест</button>
+    <h2>Облако и коды</h2><p class="nt" id="cl"></p><input id="cdi" placeholder="Код переноса или промокод" maxlength="24"><button class="btn" id="cdb">Применить код</button><button class="btn s" id="cdm">Получить код переноса</button>
     <h2>Данные</h2><label>Резервная копия защитит прогресс, если браузер очистит данные сайта</label><br><button class="btn s" id="bk1">Скопировать код прогресса</button><button class="btn s" id="bk2">Восстановить по коду</button><br><button class="btn s" id="rst">Сбросить прогресс</button></div></section>
   <section id="acs" hidden><div class="top"><button class="btn s bk" id="acb"></button><b>Достижения: <span id="acn"></span></b></div><div class="stage"><div class="ach" id="acl"></div></div></section>
   <section id="fds" hidden><div class="top"><button class="btn s bk" id="fdb"></button><b id="fdt"></b></div><div class="cards" id="cards"></div></section>
@@ -182,6 +183,7 @@ h2::before{content:"";display:inline-block;width:4px;height:14px;background:var(
 </main>
 <dialog id="dl"><b>Аккаунт</b><p><input id="un" placeholder="Ник (3–16: буквы, цифры, _)" maxlength="16"><input id="pw" type="password" placeholder="Пароль (от 6 символов)"></p><p id="er" style="color:var(--r)"></p><button class="btn" id="li">Войти</button><button class="btn s" id="rg">Создать аккаунт</button><button class="btn s" id="cx">Отмена</button></dialog>
 <dialog id="nd" style="width:min(92vw,420px)"><b style="font:800 16px var(--D)">Проверка связи</b><div id="nb" style="margin:12px 0"></div><button class="btn" id="ngo">Начать тест</button><button class="btn s" id="nx">Закрыть</button></dialog>
+<script src="config.js"></script>
 <script>
 const $=s=>document.querySelector(s),rnd=(a,b)=>Math.floor(Math.random()*(b-a))+a,now=()=>performance.now(),
 avg=a=>a.reduce((x,y)=>x+y,0)/a.length,sh=a=>a.sort(()=>Math.random()-.5);
@@ -189,8 +191,8 @@ const rdk=k=>{try{return JSON.parse(localStorage.getItem(k))}catch(e){return nul
 let S=rdk('reflex1');
 if(!S){try{const raw=localStorage.getItem('reflex1');if(raw)localStorage.setItem('reflex1_corrupt',raw)}catch(e){}S=rdk('reflex1_bak')}
 S=S||{xp:0,plays:0,streak:0,last:'',best:{}};
-let lastBak=0;
-const save=()=>{try{S.rev=(S.rev||0)+1;const j=JSON.stringify(S);localStorage.setItem('reflex1',j);if(Date.now()-lastBak>30000){localStorage.setItem('reflex1_bak',j);lastBak=Date.now()}}catch(e){}};
+let lastBak=0,pushQ=()=>{};
+const save=()=>{try{S.rev=(S.rev||0)+1;const j=JSON.stringify(S);localStorage.setItem('reflex1',j);if(Date.now()-lastBak>30000){localStorage.setItem('reflex1_bak',j);lastBak=Date.now()}if(S.user)pushQ()}catch(e){}};
 const lvl=x=>Math.floor(Math.sqrt(x/40))+1,RK=['Новичок','Ученик','Боец','Мастер','Ниндзя','Легенда'];
 // очистка таймеров и обработчиков игры
 let cl=[];const clearAll=()=>{cl.forEach(f=>f());cl=[]};
@@ -335,14 +337,14 @@ const SFX={pop:()=>tone(392,.06,'sine',.1),hit:()=>tone(587,.11,'sine',.13),good
 document.addEventListener('pointerdown',e=>{if(!e.target.closest('.btns')&&e.target.closest('.card,.btn'))SFX.pop()});
 const mu=()=>{$('#mu').innerHTML=ico(S.mute?'mute':'vol',18)+(S.mute?' Звук выключен':' Звук включён')};$('#mu').onclick=()=>{S.mute=!S.mute;save();mu()};
 // ===== Сервер (Supabase). Вставь данные проекта, см. schema.sql =====
-const CFG={url:'https://tidxvknflxlajqfwctrx.supabase.co',key:'sb_publishable_1EXhCh9IzchC0JEYhVK0NA_gTuCSF2v'};
+const CFG=window.RX_CFG||{url:'',key:''};
 const ON=()=>!!CFG.url,esc=s=>String(s).replace(/[&<>"]/g,c=>'&#'+c.charCodeAt(0)+';');
 async function api(fn,a){const r=await fetch(CFG.url+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:CFG.key,...(CFG.key.startsWith('eyJ')?{Authorization:'Bearer '+CFG.key}:{}),'Content-Type':'application/json'},body:JSON.stringify(a)});
  const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.message||'Нет связи с сервером');return j}
 const acc=()=>{$('#acc').textContent=S.user?'Выйти':'Войти'};
 $('#acc').onclick=()=>{if(S.user){S.user=null;save();acc()}else{$('#er').textContent=ON()?'':'Сервер лидеров не подключён (см. CFG в index.html).';$('#dl').showModal()}};
 async function auth(fn){const er=$('#er');if(!ON()){er.textContent='Сервер лидеров не подключён.';return}
- try{const r=await api(fn,{p_name:$('#un').value.trim(),p_pass:$('#pw').value});S.user={name:r.name,token:r.token};save();acc();$('#dl').close();$('#pw').value='';
+ try{const r=await api(fn,{p_name:$('#un').value.trim(),p_pass:$('#pw').value});S.user={name:r.name,token:r.token};save();acc();$('#dl').close();$('#pw').value='';await pullSave();
   for(const g of G)if(S.best[g.id]!=null)await api('rx_submit',{p_token:r.token,p_game:g.id,p_val:S.best[g.id],p_xp:0}).catch(()=>{})}catch(e){er.textContent=e.message}}
 $('#li').onclick=()=>auth('rx_login');$('#rg').onclick=()=>auth('rx_register');$('#cx').onclick=()=>$('#dl').close();
 function showLb(){clearAll();show('lbs');const s=$('#lbg');
@@ -401,7 +403,7 @@ async function runNet(){const b=$('#nb'),go=$('#ngo'),r={d:today()},say=m=>b.inn
  S.net=r;save();b.innerHTML=netRes(r);go.hidden=false;go.textContent='Повторить тест';if(!$('#sts').hidden)$('#nsum').innerHTML=netRes(r)}
 function openNet(){$('#nb').innerHTML=S.net?netRes(S.net):'<p class=nt>Проверим задержку сети, частоту экрана, звука и нажатия, чтобы ты знал, насколько устройство влияет на результаты. Займёт около 10 секунд.</p>';
  $('#ngo').hidden=false;$('#ngo').textContent=S.net?'Повторить тест':'Начать тест';$('#nd').showModal()}
-function sett(){show('sts');mu();$('#nsum').innerHTML=S.net?netRes(S.net):'<p class=nt>Тест ещё не проходился.</p>';const L=lvl(S.xp);$('#vo').value=Math.round((S.vol==null?1:S.vol)*100);
+function sett(){show('sts');mu();$('#cl').textContent=!ON()?'Облако не подключено (нужен заполненный config.js).':S.user?'Аккаунт «'+S.user.name+'»: прогресс сохраняется в облаке автоматически.':'Войди в аккаунт, и прогресс будет храниться в облаке. Или перенеси его кодом.';$('#nsum').innerHTML=S.net?netRes(S.net):'<p class=nt>Тест ещё не проходился.</p>';const L=lvl(S.xp);$('#vo').value=Math.round((S.vol==null?1:S.vol)*100);
  $('#prt').innerHTML=TH.map((x,i)=>[x,i]).sort((a,b)=>(a[0][4]?100:a[0][2])-(b[0][4]?100:b[0][2])).map(([x,i])=>`<button class="sw ${(S.theme||0)==i?'on':''}" ${thOk(x)?'':'disabled'} data-i=${i} style="--sc:${x[1]}"><i></i>${x[0]}<small>${thOk(x)?'':thTxt(x)}</small></button>`).join('');
  $('#prt').onclick=e=>{const b=e.target.closest('.sw');if(b&&!b.disabled){S.theme=+b.dataset.i;save();applyTh();sett()}}}
 function open(g){show('game');$('#gt').textContent=g.n;S.dif=S.dif||{};let D=S.dif[g.id]==null?1:S.dif[g.id];
@@ -432,7 +434,7 @@ function fin(g,r,D=1){clearAll();const key=g.id+(D==1?'':D?'_h':'_e'),pv=S.best[
  <button class=btn id=ag>Ещё раз</button><button class="btn s" id=mn>В меню</button></div>`;
  $('#ag').onclick=()=>open(g);$('#mn').onclick=home}
 $('#back').onclick=()=>curF?fold(curF):home();
-$('#rst').onclick=()=>{if(confirm('Удалить весь прогресс?')){S={xp:0,plays:0,streak:0,last:'',best:{},ach2:{},pg:{},rev:S.rev||0};save();applyTh();home()}};
+$('#rst').onclick=()=>{if(confirm('Удалить весь прогресс?')){S={xp:0,plays:0,streak:0,last:'',best:{},ach2:{},pg:{},rev:S.rev||0,user:S.user};save();pushSave(true);applyTh();home()}};
 document.querySelectorAll('.bk').forEach(b=>b.innerHTML=ico('back',18)+' В меню');const hh=()=>{const h=$('header');document.documentElement.style.setProperty('--hh',(getComputedStyle(h).position=='sticky'?h.offsetHeight:0)+'px')};hh();addEventListener('resize',hh);$('#si').innerHTML=ico('gear',18);$('#pi').innerHTML=ico('user',18);$('#ti').innerHTML=ico('trophy',18);mu();acc();$('#ai').innerHTML=ico('medal',18);$('#prb').onclick=$('#acb').onclick=$('#stb').onclick=$('#fdb').onclick=()=>home();$('#sb').onclick=$('#pst').onclick=sett;$('#pf').onclick=prof;$('#vo').oninput=e=>{S.vol=e.target.value/100;save()};$('#vo').onchange=()=>SFX.hit();$('#ab').onclick=achs;const fixS=()=>{S.ach2=S.ach2||{};S.pg=S.pg||{};S.best=S.best||{}};
 const sync=()=>{const o=rdk('reflex1');if(o&&(o.rev||0)>(S.rev||0)){S=o;fixS();head();if(!$('#home').hidden)home()}};
 addEventListener('storage',e=>{if(e.key=='reflex1')sync()});document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync()});addEventListener('focus',sync);
@@ -440,7 +442,18 @@ try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}ca
 const expS=()=>{const o={...S};delete o.user;return btoa(unescape(encodeURIComponent(JSON.stringify(o))))};
 $('#bk1').onclick=()=>{const c=expS();(navigator.clipboard?navigator.clipboard.writeText(c).then(()=>toast('Код прогресса скопирован')):Promise.reject()).catch(()=>prompt('Скопируй код прогресса и сохрани его:',c))};
 $('#bk2').onclick=()=>{const c=prompt('Вставь код прогресса:');if(!c)return;try{const o=JSON.parse(decodeURIComponent(escape(atob(c.trim()))));if(typeof o.xp!='number'||!o.best)throw 0;o.user=S.user;o.rev=Math.max(o.rev||0,S.rev||0)+1;S=o;fixS();save();applyTh();head();sett();toast('Прогресс восстановлен')}catch(e){toast('Не удалось прочитать код')}};
-applyTh();$('#ngo').onclick=runNet;$('#ntb').onclick=openNet;$('#nx').onclick=()=>{S.nskip=1;save();$('#nd').close()};home();if(!S.net&&!S.nskip)setTimeout(openNet,600);
+const clean=()=>{const o={...S};delete o.user;return o};
+let pTm=0;pushQ=()=>{clearTimeout(pTm);pTm=setTimeout(()=>pushSave(false),4000)};
+async function pushSave(force){if(!S.user||!ON())return;try{const r=await api('rx_save',{p_token:S.user.token,p_data:clean(),p_force:!!force});if(r&&r.conflict)adopt(r.data,'Найден более новый прогресс в облаке')}catch(e){}}
+function adopt(d,msg){const u=S.user,rev=Math.max(d.rev||0,S.rev||0)+1;S={...d,user:u};fixS();S.rev=rev;try{localStorage.setItem('reflex1',JSON.stringify(S))}catch(e){}applyTh();head();if(!$('#home').hidden)home();toast(msg)}
+async function pullSave(){if(!S.user||!ON())return;try{const d=await api('rx_load',{p_token:S.user.token});if(d&&(d.plays||0)>(S.plays||0))adopt(d,'Прогресс загружен из облака');else await pushSave(false)}catch(e){}}
+$('#cdm').onclick=async()=>{if(!ON())return toast('Сервер не подключён');try{const c=await api('rx_code_make',{p_data:clean()});$('#cl').innerHTML='Твой код: <b>'+esc(c)+'</b> · действует 30 минут, один раз. Введи его на другом устройстве в этом же поле.';try{navigator.clipboard.writeText(c)}catch(e){}toast('Код создан')}catch(e){toast(e.message)}};
+$('#cdb').onclick=async()=>{const c=$('#cdi').value.trim();if(!c)return;if(!ON())return toast('Сервер не подключён');
+ try{const r=await api('rx_code_use',{p_code:c,p_token:S.user?S.user.token:null});
+  if(r.type=='save'){if(confirm('Заменить текущий прогресс прогрессом из кода?')){adopt(r.data,'Прогресс загружен по коду');save();pushSave(true)}}
+  else{const L0=lvl(S.xp);S.xp+=r.xp;save();head();SFX.win();toast('Промокод: +'+r.xp+' XP'+(lvl(S.xp)>L0?' · новый уровень!':''))}
+  $('#cdi').value=''}catch(e){toast(e.message)}};
+applyTh();$('#ngo').onclick=runNet;$('#ntb').onclick=openNet;$('#nx').onclick=()=>{S.nskip=1;save();$('#nd').close()};home();pullSave();if(!S.net&&!S.nskip)setTimeout(openNet,600);
 </script>
 </body>
 </html>
