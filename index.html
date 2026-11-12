@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0b0f17">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
-<title>Рефлекс — тренажёр реакции v2.5.4</title>
+<title>Рефлекс — тренажёр реакции v2.6</title>
 <script>try{window.__old=!(window.CSS&&CSS.supports&&CSS.supports('color','color-mix(in srgb,red,blue)')&&CSS.supports('aspect-ratio','1')&&CSS.supports('inset','0')&&CSS.supports('width','min(1px,2px)'))}catch(e){window.__old=true}if(window.__old)document.documentElement.className+=' compat'</script>
 <style>
 :root{--ag:linear-gradient(90deg,var(--a),var(--a2));--a2:var(--a);--a2:color-mix(in srgb,var(--a),#ff4d6d 40%);--bg:#0b0f17;--c:#151b27;--c2:#212a3b;--ln:#ffffff14;--t:#f3f0e8;--m:#8d97ab;--a:#ffb703;--g:#3ddc84;--r:#ff5d5d;--D:Unbounded,"Arial Black",Impact,sans-serif}
@@ -237,13 +237,16 @@ html.compat *{backdrop-filter:none!important;-webkit-backdrop-filter:none!import
 .cdt{opacity:.01;margin:2px 0 0;padding:0;line-height:1.1;font-size:12px;text-align:center;-webkit-user-select:text;user-select:text}
 html[data-th=galaxy] body::before{background:radial-gradient(1.5px 1.5px at 8% 14%,#fff,transparent),radial-gradient(1px 1px at 17% 62%,#cfe,transparent),radial-gradient(2px 2px at 26% 33%,#fff,transparent),radial-gradient(1px 1px at 34% 82%,#fff,transparent),radial-gradient(1.5px 1.5px at 43% 9%,#bdf,transparent),radial-gradient(1px 1px at 52% 47%,#fff,transparent),radial-gradient(2px 2px at 61% 71%,#fff,transparent),radial-gradient(1px 1px at 69% 22%,#fff,transparent),radial-gradient(1.5px 1.5px at 77% 55%,#fde,transparent),radial-gradient(1px 1px at 85% 12%,#fff,transparent),radial-gradient(2px 2px at 92% 76%,#fff,transparent),radial-gradient(1px 1px at 96% 38%,#fff,transparent),radial-gradient(1px 1px at 4% 88%,#fff,transparent),radial-gradient(1.5px 1.5px at 48% 93%,#fff,transparent),radial-gradient(700px 420px at 12% 8%,#7c4dff30,transparent),radial-gradient(800px 520px at 92% 70%,#e040fb22,transparent),radial-gradient(900px 500px at 55% 100%,#38bdf822,transparent)}
 html[data-th=ultra] body::before{background:radial-gradient(800px 500px at 10% 0,#ff9ad530,transparent),radial-gradient(800px 500px at 90% 20%,#9adfff30,transparent),radial-gradient(900px 500px at 50% 100%,#a8ffcf26,transparent)}
-html[data-th=rgb] .hole.on::after{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><g stroke='%23101010' stroke-width='3' stroke-linecap='round' fill='none'><path d='M15 30L5 23M14 38L3 39M17 47L8 55M49 30L59 23M50 38L61 39M47 47L56 55M27 13L22 5M37 13L42 5'/></g><ellipse cx='32' cy='39' rx='18' ry='20' fill='%2300e000' stroke='%23101010' stroke-width='3'/><circle cx='32' cy='17' r='9' fill='%23ff2020' stroke='%23101010' stroke-width='3'/><path d='M32 22V58' stroke='%23101010' stroke-width='3'/><circle cx='21' cy='36' r='4' fill='%232a2aff'/><circle cx='43' cy='36' r='4' fill='%232a2aff'/><circle cx='22' cy='49' r='3' fill='%232a2aff'/><circle cx='42' cy='49' r='3' fill='%232a2aff'/><circle cx='28' cy='15' r='2' fill='%23fff'/><circle cx='36' cy='15' r='2' fill='%23fff'/></svg>") center/contain no-repeat}
+html[data-th=rgb] .hole.on::after{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><g stroke='%233a2412' stroke-width='3' stroke-linecap='round' fill='none'><path d='M15 30L5 23M14 38L3 39M17 47L8 55M49 30L59 23M50 38L61 39M47 47L56 55M27 13L22 5M37 13L42 5'/></g><ellipse cx='32' cy='39' rx='18' ry='20' fill='%238b5a2b' stroke='%233a2412' stroke-width='3'/><circle cx='32' cy='17' r='9' fill='%236b3f1d' stroke='%233a2412' stroke-width='3'/><path d='M32 22V58' stroke='%233a2412' stroke-width='3'/><ellipse cx='24' cy='34' rx='4' ry='8' fill='%23b8864f' opacity='.75'/><circle cx='28' cy='15' r='2' fill='%23f2e3c9'/><circle cx='36' cy='15' r='2' fill='%23f2e3c9'/></svg>") center/contain no-repeat}
 html[data-th=b] .btn{color:#fff}
+#ap{font-family:ui-monospace,Menlo,Consolas,monospace}#ap .apt{font-weight:800;color:var(--a);letter-spacing:.06em}#ap input{margin:4px 0;font:inherit;font-size:13px}
+#ap .apc{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}#ap .apc button{font:inherit;font-size:12px;padding:8px 6px;border:1px solid #ffffff1f;border-radius:8px;background:#0b111c;color:var(--t);cursor:pointer;text-align:left}
+#ap .apo{height:150px;overflow:auto;background:#05080d;border-radius:8px;padding:8px;font-size:12px;line-height:1.5;color:#9fb0c8;margin-bottom:10px}#ap .apo b{color:var(--a)}
 </style>
 </head>
 <body>
 <header>
-  <h1>РЕФЛЕКС<small>v2.5.4</small></h1>
+  <h1>РЕФЛЕКС<small>v2.6</small></h1>
   <div class="hg hn"><button class="btn s" id="lb"><span class="ico" id="ti"></span><span class="tx"> Лидеры</span></button><button class="btn s" id="ab"><span class="ico" id="ai"></span><span class="tx"> Достижения</span></button><button class="btn s" id="sb"><span class="ico" id="si"></span><span class="tx"> Настройки</span></button></div>
   <div class="hg r"><button class="btn" id="acc">Войти</button><button class="btn s" id="pf"><span class="ico" id="pi"></span><span id="pfl"></span></button></div>
   <i class="hb"><i id="xb"></i></i>
@@ -282,6 +285,8 @@ html[data-th=b] .btn{color:#fff}
 <dialog id="dl"><b>Аккаунт</b><p><input id="un" placeholder="Ник (3–16: буквы, цифры, _)" maxlength="16"><input id="pw" type="password" placeholder="Пароль (от 6 символов)"></p><p class="nt" id="gw">Прогресс гостя не считается: после входа он заменится прогрессом аккаунта, у нового аккаунта прогресс начинается с нуля.</p><p id="er" style="color:var(--r)"></p><button class="btn" id="li">Войти</button><button class="btn s" id="rg">Создать аккаунт</button><button class="btn s" id="cx">Отмена</button></dialog>
 <dialog id="pp" style="width:min(94vw,560px)"><b id="ppt" style="font:800 16px var(--D)">Политика конфиденциальности</b><div id="ppb" style="max-height:52vh;overflow:auto;margin:12px 0;padding-right:6px;font-size:14px;line-height:1.5"></div><label id="ppl" style="display:flex;gap:8px;align-items:center;margin:8px 0;opacity:.5"><input type="checkbox" id="ppc" disabled style="width:auto"> <span>Я прочитал(а) политику и согласен(на)</span></label><button class="btn" id="ppo" disabled>Принять и играть</button></dialog>
 <dialog id="pc" style="width:min(94vw,420px)"></dialog>
+<dialog id="ee" style="width:min(90vw,340px);text-align:center"></dialog>
+<dialog id="ap" style="width:min(94vw,440px)"></dialog>
 <dialog id="nd" style="width:min(92vw,420px)"><b style="font:800 16px var(--D)">Проверка связи</b><div id="nb" style="margin:12px 0"></div><button class="btn" id="ngo">Начать тест</button><button class="btn s" id="nx">Закрыть</button></dialog>
 <script src="config.js"></script>
 <script>
@@ -678,7 +683,7 @@ $('#cdb').onclick=async()=>{const c=$('#cdi').value.trim();if(!c)return;if(!ON()
   $('#cdi').value=''}catch(e){toast(e.message)}};
 applyTh();$('#ngo').onclick=runNet;$('#ntb').onclick=openNet;$('#nx').onclick=()=>{S.nskip=1;save();$('#nd').close()};home();pullSave();checkStatus();if(!S.net&&!S.nskip&&S.pol)setTimeout(openNet,600);
 
-/* v2.5.4: производительность и ПК */
+/* v2.6: производительность и ПК */
 (()=>{const R=document.documentElement;
  if('IntersectionObserver' in window){R.classList.add('io');const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('vis',e.isIntersecting)),{rootMargin:'80px'});let q=0;const ob=()=>{q=0;document.querySelectorAll('.card:not([data-o])').forEach(c=>{c.dataset.o=1;io.observe(c)})};const mo=new MutationObserver(()=>{if(!q){q=1;requestAnimationFrame(ob)}});['home','fds'].forEach(i=>mo.observe($('#'+i),{childList:true,subtree:true}));ob()}
  try{if(localStorage.getItem('rx_slow')=='1')window.__slow=1}catch(e){}applyPerf();
@@ -688,10 +693,10 @@ applyTh();$('#ngo').onclick=runNet;$('#ntb').onclick=openNet;$('#nx').onclick=()
    window.__slow=1;applyPerf();setTimeout(()=>pr(b=>{window.__fps2=Math.round(1000/b);sv(b<a*.9?1:0)}),400)})},1500);
  document.addEventListener('keydown',e=>{if(e.key!='Escape'||document.querySelector('dialog[open]'))return;const v=['game','fds','lbs','acs','prs','sts'].find(i=>!$('#'+i).hidden);if(!v)return;v=='game'?$('#back').click():home()})})();
 
-/* v2.5.4: уведомление для старых браузеров */
+/* v2.6: уведомление для старых браузеров */
 (()=>{if(!window.__old)return;try{if(localStorage.getItem('rx_oldok'))return}catch(e){}const m=document.querySelector('main')||document.body,d=document.createElement('div');d.className='old';d.innerHTML='<span>Браузер или система устарели: часть оформления упрощена, лучше обновить браузер. Игры работают.</span><button>Понятно</button>';d.querySelector('button').onclick=()=>{try{localStorage.setItem('rx_oldok',1)}catch(e){}d.remove()};m.prepend(d)})();
 
-/* v2.5.4: проверка результатов, аккаунт, политика, язык */
+/* v2.6: проверка результатов, аккаунт, политика, язык */
 var LIM={light:['<',100],target:['<',150],stroop:['<',250],arrow:['<',120],nums:['<',6],odd:['>',80],mole:['>',80],gonogo:['>',80],simon:['>',60],pairs:['>',800],digits:['>',30],cells:['>',40],chimp:['>',25],words:['>',400],missing:['>',300],order:['>',60]},MINP={odd:5,mole:5,gonogo:5};
 function rxBad(id,v){const l=LIM[id];return !!l&&Number.isFinite(v)&&(l[0]=='<'?v<l[1]:v>l[1])}
 function rxInvalid(g,r,D){$('#stage').innerHTML='<div class=res><p>'+g.n+' · '+['Лёгкий','Нормальный','Сложный'][D]+'</p><div class=big>—</div><p><b>Результат не засчитан</b></p><p>'+(r.bot?'Слишком равномерные нажатия: похоже на автокликер.':'Так быстро (или так много) не бывает.')+'</p><button class=btn id=ag>Ещё раз</button><button class="btn s" id=mn>В меню</button></div>';$('#ag').onclick=()=>open(g);$('#mn').onclick=home;SFX.bad()}
@@ -1127,6 +1132,35 @@ if(S.lang==='en'){EN={};DICT.split('\n').forEach(l=>{const i=l.indexOf('|');if(i
  [/^(\d+) XP · рекорд: (.+)$/,m=>m[1]+' XP · record: '+un(m[2])],[/^Серия \+(\d+)%$/,m=>'Streak +'+m[1]+'%'],[/^Сундук дня: \+(\d+) XP$/,m=>'Daily chest: +'+m[1]+' XP']];
  trNode(document.body);new MutationObserver(ms=>{for(const m of ms){m.addedNodes.forEach(trNode);if(m.type=='characterData')trNode(m.target)}}).observe(document.body,{childList:true,subtree:true,characterData:true});
  const _cf=window.confirm,_pr=window.prompt;window.confirm=m=>_cf.call(window,tr(m));window.prompt=(m,d)=>_pr.call(window,tr(m),d);document.documentElement.lang='en'}
+
+/* v2.6 */
+(()=>{const ee=document.getElementById('ee'),ap=document.getElementById('ap');if(!ee||!ap)return;
+ const en=()=>S.lang=='en';
+ const egg=()=>{const e=en();ee.innerHTML='<svg viewBox="0 0 48 60" width="44" height="55" style="display:block;margin:0 auto 10px"><ellipse cx="24" cy="34" rx="18" ry="24" fill="#ffd36b"/><path d="M7 34l8.5-8 8.5 8 8.5-8 8.5 8" stroke="#c0392b" stroke-width="3" fill="none" stroke-linejoin="round"/></svg><p style="margin:0 0 6px;font:800 16px var(--D)">'+(e?'Hi, I\u2019m James Halliday, etc.':'Привет, я Джеймс Холидей и т.д.')+'</p><p class="nt" style="margin:0 0 14px">'+(e?'You found the Easter egg.':'Ты нашёл пасхалку.')+'</p><button class="btn" id="eeo">'+(e?'Close':'Закрыть')+'</button>';document.getElementById('eeo').onclick=()=>ee.close();if(!ee.open)ee.showModal()};
+ const CMD=[
+ ['Сбросить всем прогресс','Reset everyone\u2019s progress',['Сброс запущен у всех игроков… кроме тех, у кого есть чувство юмора. Они в безопасности.','Прогресс сброшен. У всех, кроме тебя. Тебе придётся играть дальше.','Ошибка 403: недостаточно прав и слишком много любопытства.'],['Reset started for all players… except those with a sense of humor. They are safe.','Error 403: not enough rights, too much curiosity.']],
+ ['Выдать все темы','Give all themes',['Все темы выданы. Проверь настройки. Нет, не выданы. Но мы старались.','Выдано 15 тем из 15. Кому? Не тебе.','Все темы выданы! (Это шутка, но спасибо, что поверил.)'],['All themes granted. Check the settings. Nope, nothing there. But we tried.','Granted 15 of 15 themes. To whom? Not you.']],
+ ['Получить все темы','Get all themes',['Темы получены. Теперь у тебя абсолютно тот же набор, что и был.','Получено тем: 0. Ты ожидал чуда?','Сервер ответил: «Нет». Вежливо, но твёрдо.'],['Themes received. You now own exactly the same set as before.','Server replied: “No”. Politely, but firmly.']],
+ ['Отключить сайт','Shut the site down',['Отключаю через 3… 2… 1… Ты всё ещё читаешь это, значит, не вышло.','Сайт отключён. Обнови страницу и убедись, что он работает.','Отказано: слишком много друзей сейчас играют.'],['Shutting down in 3… 2… 1… You are still reading this, so it failed.','Denied: too many friends are playing right now.']],
+ ['Выдать опыт','Give XP',['+999 999 XP выдано. Загляни в профиль: там то же число, что и было.','Опыт выдан администратору. Это не ты.','Начислено столько XP, что мы устали считать. Тебе ничего.'],['+999,999 XP granted. Check your profile: same number as before.','XP granted to the admin. That is not you.']],
+ ['Забрать опыт','Take XP',['Опыт забран. У кого? Ни у кого. Не бойся.','У тебя забрали XP. (На самом деле нет. Но ты ведь на секунду испугался.)','Нечего забирать. Сам знаешь, сколько ты играл.'],['XP taken. From whom? Nobody. Do not worry.','Nothing to take. You know how much you played.']],
+ ['Добавить баг','Add a bug',['Баг добавлен. Теперь это фича.','Баг уже в игре. Называется «ты нажал не туда».','Баг добавлен. Он будет жить в твоём телефоне и очень скучать.'],['Bug added. It is a feature now.','The bug is already in the game. It is called “you pressed the wrong thing”.']],
+ ['Режим бога','God mode',['Режим бога включён. Для кого-то другого.','Ты теперь бог. Только для этой строки текста.'],['God mode enabled. For somebody else.','You are a god now. Only for this line of text.']],
+ ['Удалить всех игроков','Delete all players',['Удаляю всех игроков… осталось 0. Нет, шучу, остался ты. Нажми ещё раз.','Ошибка: нельзя удалить всех, вдруг они захотят играть.'],['Deleting all players… 0 left. Just kidding, you remain. Press again.','Error: cannot delete everyone, they might want to play.']],
+ ['Позвать администратора','Call the admin',['Администратор уже здесь. Это ты? Нет, не ты.','Администратор занят: играет на Сложном и ругается.','Вызываем… Он перезвонит. Когда-нибудь.'],['The admin is already here. Is that you? No, it is not.','The admin is busy: playing on Hard and complaining.']]];
+ const GEN=[['Команда не найдена. Попробуй волшебное слово.','Command not found. Try the magic word.'],['Такой команды нет. Зато есть ты.','No such command. But there is you.'],['Синтаксическая ошибка. И ещё немного грусти.','Syntax error. And a little sadness.']];
+ const cnt={};let gi=0;
+ const open=()=>{const e=en(),L=(r,x)=>e?x:r;
+  ap.innerHTML='<div class="apt">ADMIN PANEL v2.6</div><div class="nt" style="margin:2px 0 8px">root@reflex:~#</div><input id="ap1" placeholder="'+L('Ник игрока','Player nickname')+'" autocomplete="off"><input id="ap2" placeholder="'+L('Количество','Amount')+'" autocomplete="off"><input id="ap3" placeholder="'+L('Команда… (Enter)','Command… (Enter)')+'" autocomplete="off"><div class="apc">'+CMD.map((c,i)=>'<button data-i="'+i+'">'+esc(L(c[0],c[1]))+'</button>').join('')+'</div><div class="apo" id="apo"></div><button class="btn s" id="apx">'+L('Закрыть','Close')+'</button>';
+  const o=document.getElementById('apo'),log=(c,m)=>{o.insertAdjacentHTML('beforeend','<div><b>&gt; '+esc(c)+'</b></div><div>'+esc(m)+'</div>');o.scrollTop=o.scrollHeight};
+  log('login',L('Добро пожаловать, администратор. Проверка прав… да (нет).','Welcome, administrator. Checking rights… yes (no).'));
+  const chk=el=>{if(el.value.trim().toUpperCase()==='ADVENTURE'){el.value='';ap.close();egg();return true}return false};
+  ap.querySelectorAll('input').forEach(el=>el.oninput=()=>chk(el));
+  document.getElementById('ap3').onkeydown=ev=>{if(ev.key!=='Enter')return;const el=ev.target,v=el.value.trim();if(!v||chk(el))return;el.value='';const g=GEN[gi++%GEN.length];log(v,L(g[0],g[1]))};
+  ap.querySelector('.apc').onclick=ev=>{const b=ev.target.closest('button');if(!b)return;const i=+b.dataset.i,c=CMD[i],ms=e?c[3]:c[2],k=(cnt[i]=(cnt[i]||0)+1)-1;log(L(c[0],c[1]),ms[k%ms.length])};
+  document.getElementById('apx').onclick=()=>ap.close();if(!ap.open)ap.showModal()};
+ let n=0,t0=0;const v=[...document.querySelectorAll('small')].find(x=>/^v\d/.test(x.textContent.trim()));
+ if(v)v.addEventListener('click',()=>{const t=Date.now();if(t-t0>3000)n=0;t0=t;if(++n>=7){n=0;open()}})})();
 </script>
 </body>
 </html>
