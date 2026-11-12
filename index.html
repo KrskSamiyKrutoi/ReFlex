@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0b0f17">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
-<title>Рефлекс — тренажёр реакции v2.5</title>
+<title>Рефлекс — тренажёр реакции v2.5.4</title>
 <script>try{window.__old=!(window.CSS&&CSS.supports&&CSS.supports('color','color-mix(in srgb,red,blue)')&&CSS.supports('aspect-ratio','1')&&CSS.supports('inset','0')&&CSS.supports('width','min(1px,2px)'))}catch(e){window.__old=true}if(window.__old)document.documentElement.className+=' compat'</script>
 <style>
 :root{--ag:linear-gradient(90deg,var(--a),var(--a2));--a2:var(--a);--a2:color-mix(in srgb,var(--a),#ff4d6d 40%);--bg:#0b0f17;--c:#151b27;--c2:#212a3b;--ln:#ffffff14;--t:#f3f0e8;--m:#8d97ab;--a:#ffb703;--g:#3ddc84;--r:#ff5d5d;--D:Unbounded,"Arial Black",Impact,sans-serif}
@@ -149,7 +149,7 @@ h2::before{content:"";display:inline-block;width:4px;height:14px;background:var(
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .grid .lit{background:var(--a);box-shadow:0 0 16px var(--a)}.grid .nm{background:#34425c}.mg{display:grid;gap:10px;margin:12px auto;max-width:340px}.mt{aspect-ratio:1;border:0;border-radius:14px;background:var(--c2);color:var(--t);font:800 28px var(--D);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .12s,transform .12s;touch-action:manipulation}
 .mt.lit{background:var(--a);color:#161000;transform:scale(.94)}.mt.op{background:#2b364b}.mt.ok{background:var(--g);color:#0a1a10}.mt.no{background:var(--r);color:#fff}.word.s{height:64px;font-size:40px}
-.fl{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:14px auto;max-width:360px}.fl .mt{flex:none;aspect-ratio:1;width:min(96px,calc((100% - (var(--c) - 1)*10px)/var(--c)))}.mt svg{width:52%;height:52%}.pn{margin:10px 0}
+.fl{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:14px auto;max-width:360px}.fl .mt{flex:none;aspect-ratio:1;width:min(96px,calc((100% - (var(--c) - 1)*10px)/var(--c)))}.mt svg{width:max(52%,34px);height:max(52%,34px);flex:none}.pn{margin:10px 0}
 html[data-ui=new] .pn{background:#0f1521;border-radius:22px;padding:12px;box-shadow:inset 0 0 30px #0006}html[data-ui=new] .pn .mg,html[data-ui=new] .pn .fl{margin:0 auto}
 html[data-ui=new] .mt,html[data-ui=new] .grid button{box-shadow:0 4px 0 #0b0f17aa,inset 0 1px 0 #ffffff18}html[data-ui=new] .mt{background:linear-gradient(160deg,#2f3b53,var(--c2))}
 html[data-ui=new] .mt:active,html[data-ui=new] .grid button:active{transform:scale(.95)}
@@ -213,7 +213,7 @@ html[data-ui=new] .hd.c+.tb{margin:-2px auto 10px;height:4px;max-width:none}
 :root{touch-action:manipulation}
 body::before{content:"";position:fixed;top:0;left:0;right:0;bottom:0;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 500px at 8% -10%,transparent,transparent),radial-gradient(800px 500px at 100% 0,transparent,transparent);background:radial-gradient(900px 500px at 8% -10%,color-mix(in srgb,var(--a),transparent 87%),transparent),radial-gradient(800px 500px at 100% 0,color-mix(in srgb,var(--a2),transparent 91%),transparent)}
 #acl>div{content-visibility:auto;contain-intrinsic-size:auto 76px}
-html.io[data-ui=new] .card:not(.vis)::before,html.io[data-ui=new] .card:not(.vis) .ic{animation-play-state:paused}
+html.io[data-ui=new] .card:not(.vis)::before,html.io[data-ui=new] .card:not(.vis) .ic{animation:none}
 html.lite header{backdrop-filter:none;-webkit-backdrop-filter:none;background:#0b0f17f2}html.lite dialog::backdrop{backdrop-filter:none;background:#000c}
 html.lite .card::before,html.lite .card .ic{animation:none!important}html.lite .word{text-shadow:none}
 /* ===== версия для ПК ===== */
@@ -234,11 +234,16 @@ html.compat *{backdrop-filter:none!important;-webkit-backdrop-filter:none!import
  .arena{height:420px}.btns .btn{min-width:120px;padding:16px 22px}.btns.k{max-width:520px}.stage{padding:22px}
 }
 @media(pointer:coarse){.btn{min-height:44px}.sw,.at button{min-height:44px}}
+.cdt{opacity:.01;margin:2px 0 0;padding:0;line-height:1.1;font-size:12px;text-align:center;-webkit-user-select:text;user-select:text}
+html[data-th=galaxy] body::before{background:radial-gradient(1.5px 1.5px at 8% 14%,#fff,transparent),radial-gradient(1px 1px at 17% 62%,#cfe,transparent),radial-gradient(2px 2px at 26% 33%,#fff,transparent),radial-gradient(1px 1px at 34% 82%,#fff,transparent),radial-gradient(1.5px 1.5px at 43% 9%,#bdf,transparent),radial-gradient(1px 1px at 52% 47%,#fff,transparent),radial-gradient(2px 2px at 61% 71%,#fff,transparent),radial-gradient(1px 1px at 69% 22%,#fff,transparent),radial-gradient(1.5px 1.5px at 77% 55%,#fde,transparent),radial-gradient(1px 1px at 85% 12%,#fff,transparent),radial-gradient(2px 2px at 92% 76%,#fff,transparent),radial-gradient(1px 1px at 96% 38%,#fff,transparent),radial-gradient(1px 1px at 4% 88%,#fff,transparent),radial-gradient(1.5px 1.5px at 48% 93%,#fff,transparent),radial-gradient(700px 420px at 12% 8%,#7c4dff30,transparent),radial-gradient(800px 520px at 92% 70%,#e040fb22,transparent),radial-gradient(900px 500px at 55% 100%,#38bdf822,transparent)}
+html[data-th=ultra] body::before{background:radial-gradient(800px 500px at 10% 0,#ff9ad530,transparent),radial-gradient(800px 500px at 90% 20%,#9adfff30,transparent),radial-gradient(900px 500px at 50% 100%,#a8ffcf26,transparent)}
+html[data-th=rgb] .hole.on::after{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><g stroke='%23101010' stroke-width='3' stroke-linecap='round' fill='none'><path d='M15 30L5 23M14 38L3 39M17 47L8 55M49 30L59 23M50 38L61 39M47 47L56 55M27 13L22 5M37 13L42 5'/></g><ellipse cx='32' cy='39' rx='18' ry='20' fill='%2300e000' stroke='%23101010' stroke-width='3'/><circle cx='32' cy='17' r='9' fill='%23ff2020' stroke='%23101010' stroke-width='3'/><path d='M32 22V58' stroke='%23101010' stroke-width='3'/><circle cx='21' cy='36' r='4' fill='%232a2aff'/><circle cx='43' cy='36' r='4' fill='%232a2aff'/><circle cx='22' cy='49' r='3' fill='%232a2aff'/><circle cx='42' cy='49' r='3' fill='%232a2aff'/><circle cx='28' cy='15' r='2' fill='%23fff'/><circle cx='36' cy='15' r='2' fill='%23fff'/></svg>") center/contain no-repeat}
+html[data-th=b] .btn{color:#fff}
 </style>
 </head>
 <body>
 <header>
-  <h1>РЕФЛЕКС<small>v2.4.1</small></h1>
+  <h1>РЕФЛЕКС<small>v2.5.4</small></h1>
   <div class="hg hn"><button class="btn s" id="lb"><span class="ico" id="ti"></span><span class="tx"> Лидеры</span></button><button class="btn s" id="ab"><span class="ico" id="ai"></span><span class="tx"> Достижения</span></button><button class="btn s" id="sb"><span class="ico" id="si"></span><span class="tx"> Настройки</span></button></div>
   <div class="hg r"><button class="btn" id="acc">Войти</button><button class="btn s" id="pf"><span class="ico" id="pi"></span><span id="pfl"></span></button></div>
   <i class="hb"><i id="xb"></i></i>
@@ -263,7 +268,10 @@ html.compat *{backdrop-filter:none!important;-webkit-backdrop-filter:none!import
     <h2>Цвет интерфейса</h2><label>Цвета открываются за уровни и достижения</label><div class="sws" id="prt" style="margin-top:8px"></div>
     <h2>Проверка связи</h2><div id="nsum"></div><button class="btn s" id="ntb">Запустить тест</button>
     <h2>Облако и коды</h2><p class="nt" id="cl"></p><input id="cdi" placeholder="Код переноса или промокод" maxlength="24"><button class="btn" id="cdb">Применить код</button><button class="btn s" id="cdm">Получить код переноса</button><p class="nt" style="margin-top:6px">Код действует 30 минут и срабатывает один раз. Если ты вошёл в аккаунт, новый код можно получить раз в час.</p>
-    <h2>Данные</h2><button class="btn s" id="rst">Сбросить прогресс</button></div></section>
+    <h2>Данные</h2><button class="btn s" id="rst">Сбросить прогресс</button>
+    <h2>Язык</h2><div class="sws" id="lgs"></div><button class="btn s" id="ppv" style="margin-top:10px">Политика конфиденциальности</button>
+    <a class="btn s" id="bug" href="https://forms.gle/5vSH25unp24C6vEZ8" target="_blank" rel="noopener noreferrer" style="margin-top:10px;text-decoration:none">Сообщить об ошибке</a>
+    <p class="cdt">Сделано KarasSamiyKrutoi с помощью бесплатного Claude</p></div></section>
   <section id="acs" hidden><div class="top"><button class="btn s bk" id="acb"></button><b>Достижения: <span id="acn"></span></b></div><div class="stage"><div class="ach" id="acl"></div></div></section>
   <section id="fds" hidden><div class="top"><button class="btn s bk" id="fdb"></button><b id="fdt"></b></div><div class="cards" id="cards"></div></section>
   <section id="lbs" hidden>
@@ -271,7 +279,9 @@ html.compat *{backdrop-filter:none!important;-webkit-backdrop-filter:none!import
     <div class="stage"><select id="lbg"></select><p id="lbn" class="hud"></p><table id="lbt" style="width:100%"></table></div>
   </section>
 </main>
-<dialog id="dl"><b>Аккаунт</b><p><input id="un" placeholder="Ник (3–16: буквы, цифры, _)" maxlength="16"><input id="pw" type="password" placeholder="Пароль (от 6 символов)"></p><p id="er" style="color:var(--r)"></p><button class="btn" id="li">Войти</button><button class="btn s" id="rg">Создать аккаунт</button><button class="btn s" id="cx">Отмена</button></dialog>
+<dialog id="dl"><b>Аккаунт</b><p><input id="un" placeholder="Ник (3–16: буквы, цифры, _)" maxlength="16"><input id="pw" type="password" placeholder="Пароль (от 6 символов)"></p><p class="nt" id="gw">Прогресс гостя не считается: после входа он заменится прогрессом аккаунта, у нового аккаунта прогресс начинается с нуля.</p><p id="er" style="color:var(--r)"></p><button class="btn" id="li">Войти</button><button class="btn s" id="rg">Создать аккаунт</button><button class="btn s" id="cx">Отмена</button></dialog>
+<dialog id="pp" style="width:min(94vw,560px)"><b id="ppt" style="font:800 16px var(--D)">Политика конфиденциальности</b><div id="ppb" style="max-height:52vh;overflow:auto;margin:12px 0;padding-right:6px;font-size:14px;line-height:1.5"></div><label id="ppl" style="display:flex;gap:8px;align-items:center;margin:8px 0;opacity:.5"><input type="checkbox" id="ppc" disabled style="width:auto"> <span>Я прочитал(а) политику и согласен(на)</span></label><button class="btn" id="ppo" disabled>Принять и играть</button></dialog>
+<dialog id="pc" style="width:min(94vw,420px)"></dialog>
 <dialog id="nd" style="width:min(92vw,420px)"><b style="font:800 16px var(--D)">Проверка связи</b><div id="nb" style="margin:12px 0"></div><button class="btn" id="ngo">Начать тест</button><button class="btn s" id="nx">Закрыть</button></dialog>
 <script src="config.js"></script>
 <script>
@@ -329,10 +339,10 @@ const G=[
 {id:'stroop',ic:'🎨',n:'Цвета',d:'Нажми квадрат того цвета, в который окрашено слово (а не того, что написано).',f:ms,low:1,dif:['8 раундов, цвет часто совпадает со словом','10 раундов','14 раундов'],
  run(el,end,D){choice(el,end,[8,10,14][D],C.map(c=>c[0]),w=>{const a=rnd(0,4),b=Math.random()<[.5,0,0][D]?a:(a+1+rnd(0,3))%4;w.textContent=C[a][0];w.style.color=C[b][1];return b},['1','2','3','4'],2)}},
 {id:'odd',ic:'🔍',n:'Оттенки',d:'Найди плитку другого оттенка. Ошибка отнимает секунды.',f:pt,dif:['40 секунд, поле до 5×5, заметная разница','30 секунд, поле до 6×6','25 секунд, поле до 7×7, тонкая разница'],
- run(el,end,D){let s=0;const TT=[40,30,25][D];el.innerHTML=`<div class=hud>Время <b id=tm>${TT}.0</b> · очки <b id=sc>0</b></div><div class=grid id=gr></div>`;const gr=$('#gr');
-  const T=timer(TT,$('#tm'),()=>end({val:s,xp:s*6,txt:'Найдено: '+s}));
-  const rd=()=>{const z=Math.min([5,6,7][D],[3,3,4][D]+Math.floor(s/5)),h=rnd(0,360),d=Math.max([9,6,4][D],[28,22,16][D]-s*[.5,.7,.9][D]),o=rnd(0,z*z);gr.style.gridTemplateColumns=`repeat(${z},1fr)`;gr.innerHTML='';
-   for(let i=0;i<z*z;i++){const b=mk(gr,'button');b.style.background=`hsl(${h} 65% ${i==o?50+d:50}%)`;b.onpointerdown=()=>{if(i==o){s++;SFX.hit();$('#sc').textContent=s;rd()}else{T.t-=[1,2,2][D];SFX.bad()}}}};rd()}},
+ run(el,end,D){let s=0;const TT=[40,30,25][D],ck=[];let t0=0;const bot=()=>{if(ck.length<15)return false;const d=ck.slice(1).map((x,i)=>x-ck[i]),m=d.reduce((a,b)=>a+b,0)/d.length;return Math.sqrt(d.reduce((a,b)=>a+(b-m)*(b-m),0)/d.length)<15};el.innerHTML=`<div class=hud>Время <b id=tm>${TT}.0</b> · очки <b id=sc>0</b></div><div class=grid id=gr></div>`;const gr=$('#gr');
+  const T=timer(TT,$('#tm'),()=>end({val:s,xp:s*6,txt:'Найдено: '+s,bot:bot()}));
+  const rd=()=>{t0=now();const z=Math.min([5,6,7][D],[3,3,4][D]+Math.floor(s/5)),h=rnd(0,360),d=Math.max([9,6,4][D],[28,22,16][D]-s*[.5,.7,.9][D]),o=rnd(0,z*z);gr.style.gridTemplateColumns=`repeat(${z},1fr)`;gr.innerHTML='';
+   for(let i=0;i<z*z;i++){const b=mk(gr,'button');b.style.background=`hsl(${h} 65% ${i==o?50+d:50}%)`;b.onpointerdown=()=>{const n=now();if(n-t0<140)return;ck.push(n);if(i==o){s++;SFX.hit();$('#sc').textContent=s;rd()}else{T.t-=[1,2,2][D];SFX.bad()}}}};rd()}},
 {id:'mole',ic:'🔨',n:'Кроты',d:'Бей кротов, пока они не спрятались. 25 секунд, с каждым попаданием они появляются всё быстрее.',f:pt,dif:['Кроты задерживаются дольше','Стандартная скорость','Кроты быстрые и появляются часто'],
  run(el,end,D){const P=[[1600,1000,1100,600],[1300,750,850,400],[1000,550,700,330]][D];let s=0;el.innerHTML='<div class=hud>Время <b id=tm>25.0</b> · очки <b id=sc>0</b></div><div class=grid id=gr style="grid-template-columns:repeat(3,1fr);gap:14px"></div>';
   const H=[...Array(9)].map(()=>mk($('#gr'),'button','hole'));
@@ -447,9 +457,9 @@ const ALL=[...G,...GM];
 const RANKS=[[1,'Новичок'],[3,'Ученик'],[5,'Боец'],[7,'Охотник'],[10,'Мастер'],[13,'Ниндзя'],[17,'Гроссмейстер'],[22,'Легенда'],[30,'Бог реакции']];
 const rank=L=>RANKS.filter(r=>L>=r[0]).pop()[1],xr=L=>[40*(L-1)**2,40*L*L];
 const TH=[['Золото','#ffb703',1],['Бирюза','#2ec4b6',3],['Малина','#ff4d8d',5,'#cfeaff'],['Неон','#9bf542',0,'','fast'],['Фиолет','#a78bfa',12],['Лёд','#4cc9f0',16],
-['Коралл','#ff7a59',2,'#cfeaff'],['Изумруд','#34d399',4],['Океан','#4da3ff',6],['Мандарин','#fb923c',0,'','s7'],['Сакура','#f4a9d0',0,'','col'],['Индиго','#8b8dff',0,'','hardall'],['Роза','#ff5c7a',0,'#cfeaff','star2all'],['Платина','#d5dde8',0,'','x5'],['Лава','#ff4d4d',0,'#cfeaff','tri',['#ff3b2f','#ff7a1a','#ffc93c']],['Янтарь','#f59e0b',8],['Сирень','#c084fc',14],['Небо','#38bdf8',20],
-['Закат','#ff7a6b',0,'','mall',['#ff5e7e','#ff8a5b','#ffc56b']],['Космос','#8b7bff',0,'#9ef6ff','mfold',['#5b6cff','#a35bff','#ff5bd1']]];
-const LT=[['ultra','Ультра','#e040fb','#9ef6ff',['#ff3df5','#8a5cff','#2fe6ff']],['galaxy','Галактика','#7c5cff','#ffd36b',['#1fd1ff','#7c5cff','#ff4fa3','#ffb347']],['legacy','Legacy','#ffb703','#4cc9f0',['#ffb703','#3ddc84']]];
+['Коралл','#ff7a59',2,'#cfeaff'],['Изумруд','#34d399',4],['Океан','#4da3ff',6],['Мандарин','#fb923c',0,'','s7'],['Сакура','#f4a9d0',0,'','col'],['Индиго','#8b8dff',0,'','hardall'],['Роза','#ff5c7a',0,'#cfeaff','star2all'],['Платина','#d5dde8',0,'','x5'],['Лава','#ff4d4d',0,'#cfeaff','tri',['#ff3b2f','#ffc93c']],['Янтарь','#f59e0b',8],['Сирень','#c084fc',14],['Небо','#38bdf8',20],
+['Закат','#ff7a6b',0,'','mall',['#ff5e7e','#ffc56b']],['Космос','#8b7bff',0,'#9ef6ff','mfold',['#5b6cff','#ff5bd1']]];
+const LT=[['ultra','Ультра','#c9a7ff','#9ef6ff',['#ff9ad5','#ffd59a','#fff59a','#a8ffcf','#9adfff','#c9a7ff']],['galaxy','Галактика','#9b7bff','#7fe3ff',['#7c4dff','#38bdf8']],['legacy','Legacy','#ffb703','#4cc9f0',['#ffb703','#3ddc84']],['r','R','#ff0000','#ff0000',['#ff0000','#ff0000'],1],['g','G','#00ff00','#00ff00',['#00ff00','#00ff00'],1],['b','B','#0000ff','#4040ff',['#0000ff','#0000ff'],1],['rgb','RGB','#00ff00','#00ff00',['#ff0000','#00ff00','#0000ff'],1]];
 const thOk=x=>x[4]?!!S.ach2[x[4]]:lvl(S.xp)>=x[2],thTxt=x=>x[4]?'достижение «'+AC.find(a=>a[0]==x[4])[2]+'»':'с '+x[2]+' ур.';
 const THS=[...TH].sort((a,b)=>a[2]-b[2]);
 const an=c=>{const r=parseInt(c.slice(1,3),16)/255,g=parseInt(c.slice(3,5),16)/255,b=parseInt(c.slice(5,7),16)/255,M=Math.max(r,g,b),m=Math.min(r,g,b),l=(M+m)/2,d=M-m,sa=d?d/(1-Math.abs(2*l-1)):0;let h=!d?0:M==r?((g-b)/d+6)%6:M==g?(b-r)/d+2:(r-g)/d+4;h*=60;h=(h>20&&h<100?h-28:h+28+360)%360;return 'hsl('+Math.round(h)+' '+Math.round(sa*100)+'% '+Math.round(Math.min(.78,l+.04)*100)+'%)'};
@@ -501,7 +511,7 @@ const stars=id=>{const p=S.pg[id]||0;return p>=50?3:p>=20?2:p>=5?1:0};
 const dod=()=>ALL[Math.floor(Date.now()/864e5)%ALL.length];
 const CAT={light:'Реакция',target:'Меткость',stroop:'Внимание',odd:'Зрение',mole:'Скорость',arrow:'Координация',gonogo:'Контроль',nums:'Поиск',simon:'Последовательность',pairs:'Зрительная память',digits:'Рабочая память',cells:'Пространство',chimp:'Порядок',order:'Серия предметов',words:'Словесная память',missing:'Запоминание'};
 const sr=n=>[0,1,2].map(i=>`<svg class="${i<n?'on':''}" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">${IC.star}</svg>`).join('');
-const toast=m=>{const d=mk(document.body,'div','toast',m);setTimeout(()=>d.remove(),2600)};
+const toast=m=>{const d=mk(document.body,'div','toast',tr(m));setTimeout(()=>d.remove(),2600)};
 const Q=[['Сыграй 5 игр',5,d=>d.plays,60],['Сыграй в 3 разные игры',3,d=>Object.keys(d.g).length,70],['Побей личный рекорд',1,d=>d.rec,80],
 ['Набери 150 XP сегодня',150,d=>d.xp,70],['Сыграй 3 раза в одну игру',3,d=>Math.max(0,...Object.values(d.g)),60],['Сыграй 8 раз за день',8,d=>d.plays,90]];
 const today=()=>new Date().toISOString().slice(0,10),todayQ=()=>{const n=Math.floor(Date.now()/864e5)%6;return[n,(n+2)%6,(n+4)%6]};
@@ -539,10 +549,9 @@ const ON=()=>!!CFG.url,esc=s=>String(s).replace(/[&<>"]/g,c=>'&#'+c.charCodeAt(0
 async function api(fn,a){const r=await fetch(CFG.url+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:CFG.key,...(CFG.key.startsWith('eyJ')?{Authorization:'Bearer '+CFG.key}:{}),'Content-Type':'application/json'},body:JSON.stringify(a)});
  const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.message||'Нет связи с сервером');return j}
 const acc=()=>{$('#acc').textContent=S.user?'Выйти':'Войти'};
-$('#acc').onclick=()=>{if(S.user){S.user=null;save();acc()}else{$('#er').textContent=ON()?'':'Сервер лидеров не подключён (см. CFG в index.html).';$('#dl').showModal()}};
+$('#acc').onclick=async()=>{if(S.user){if(!confirm('Выйти из аккаунта? Прогресс на этом устройстве сбросится, он сохранён в аккаунте. Прогресс гостя не считается.'))return;const ok=await Promise.race([pushSave(false),new Promise(r=>setTimeout(()=>r(false),6000))]);if(!ok&&!confirm('Не удалось сохранить прогресс в облаке. Выйти всё равно? Несохранённое пропадёт.'))return;S.user=null;window.ACC=null;resetLocal(false);save();acc();home();toast('Ты вышел из аккаунта')}else{$('#er').textContent=ON()?'':'Сервер лидеров не подключён (см. CFG в index.html).';$('#dl').showModal()}};
 async function auth(fn){const er=$('#er');if(!ON()){er.textContent='Сервер лидеров не подключён.';return}
- try{const r=await api(fn,{p_name:$('#un').value.trim(),p_pass:$('#pw').value});S.user={name:r.name,token:r.token};save();acc();$('#dl').close();$('#pw').value='';await pullSave();
-  for(const g of ALL)if(S.best[g.id]!=null)await api('rx_submit',{p_token:r.token,p_game:g.id,p_val:S.best[g.id],p_xp:0}).catch(()=>{})}catch(e){er.textContent=e.message}}
+ try{const r=await api(fn,{p_name:$('#un').value.trim(),p_pass:$('#pw').value});resetLocal(false);S.user={name:r.name,token:r.token};save();acc();$('#dl').close();$('#pw').value='';await loginLoad();await checkStatus();home();toast('Ты вошёл как '+r.name+'. Прогресс гостя не считается');}catch(e){er.textContent=e.message}}
 $('#li').onclick=()=>auth('rx_login');$('#rg').onclick=()=>auth('rx_register');$('#cx').onclick=()=>$('#dl').close();
 function showLb(){clearAll();show('lbs');const s=$('#lbg');
  if(!s.options.length){s.innerHTML='<option value=xp>Общий XP</option>'+ALL.map(g=>`<option value=${g.id}>${g.n}</option>`).join('');s.onchange=loadLb}loadLb()}
@@ -586,10 +595,10 @@ function acr(){$('#acn').textContent=AC.filter(a=>S.ach2[a[0]]).length+' из '+
  $('#acl').innerHTML=[0,1,2].filter(k=>acT<0||acT==k).map(k=>(acT<0?'<h3 class=ag>'+hd[k]+'<small>'+G3[k].filter(a=>S.ach2[a[0]]).length+' / '+G3[k].length+'</small></h3>':'')+G3[k].map(row).join('')).join('')}
 function prof(){show('prs');const L=lvl(S.xp),[lo,hi]=xr(L),cr=2*Math.PI*54,nx=RANKS.find(r=>r[0]>L),nt=THS.find(x=>!x[4]&&x[2]>L);
  $('#prc').innerHTML=`<svg viewBox="0 0 120 120" width="150" height="150"><circle cx="60" cy="60" r="54" fill="none" stroke="var(--c2)" stroke-width="9"/><circle cx="60" cy="60" r="54" fill="none" stroke="var(--a)" stroke-width="9" stroke-linecap="round" stroke-dasharray="${cr*(S.xp-lo)/(hi-lo)} 400" transform="rotate(-90 60 60)"/></svg><div class=pl><span>уровень</span><b>${L}</b></div>`;
- $('#pri').innerHTML=`<p>${S.user?'<span class=ico>'+ico('user',16)+'</span> <b>'+esc(S.user.name)+'</b>':'Гость — войди, чтобы попасть в таблицу лидеров'}</p><h3>${rank(L)}</h3>
+ $('#pri').innerHTML=`<p>${S.user?'<span class=ico>'+ico('user',16)+'</span> <b>'+esc(S.user.name)+'</b>':'Гость — войди, чтобы попасть в таблицу лидеров. Прогресс гостя не считается'}</p><h3>${rank(L)}</h3>
  <p>${S.xp} XP · до ${L+1} уровня: <b>${hi-S.xp}</b> XP<br>${nx?'Следующий ранг «'+nx[1]+'» на '+nx[0]+' уровне':'Максимальный ранг!'}<br>Цветов интерфейса открыто: ${TH.filter(thOk).length} из ${TH.length}${nt?' (следующий на '+nt[2]+' ур.)':''}</p>
  <div class=stats><div><b>${S.plays}</b>игр</div><div><b>${S.recs||0}</b>рекордов</div><div><b>${S.streak}</b>дн. подряд</div><div><b>${ms2()}</b>лучшая серия</div><div><b>${AC.filter(a=>S.ach2[a[0]]).length}/${AC.length}</b>достижений</div></div>`;
- $('#prr').innerHTML=RANKS.map(r=>`<div class="${L>=r[0]?'on':''}"><b>${r[1]}</b><small>с ${r[0]} ур.</small></div>`).join('')}
+ $('#prr').innerHTML=RANKS.map(r=>`<div class="${L>=r[0]?'on':''}"><b>${r[1]}</b><small>с ${r[0]} ур.</small></div>`).join('');accInfo()}
 const rate=(v,a,b)=>v<a?['отлично','g']:v<b?['нормально','y']:['высокая','r'];
 function netRes(r){const row=(n,v,x)=>`<div class=nr><span>${n}</span><b>${v}</b>${x?`<i class="${x[1]}">${x[0]}</i>`:''}</div>`,ok=v=>v!=null;
  return row('Пинг до сайта',ok(r.ping)?Math.round(r.ping)+' мс':'нет данных',ok(r.ping)&&rate(r.ping,60,150))+(ok(r.ping)?row('Нестабильность',Math.round(r.jit)+' мс',rate(r.jit,15,40)):'')
@@ -612,9 +621,10 @@ function openNet(){$('#nb').innerHTML=S.net?netRes(S.net):'<p class=nt>Пров�
 function sett(){show('sts');mu();$('#cl').textContent=!ON()?'Облако не подключено (нужен заполненный config.js).':S.user?'Аккаунт «'+S.user.name+'»: прогресс сохраняется в облаке автоматически.':'Войди в аккаунт, и прогресс будет храниться в облаке. Или перенеси его кодом.';$('#nsum').innerHTML=S.net?netRes(S.net):'<p class=nt>Тест ещё не проходился.</p>';const L=lvl(S.xp);$('#vo').value=Math.round((S.vol==null?1:S.vol)*100);
  $('#uis').innerHTML=[['new','New','объёмные плитки, свечение'],['legacy','Legacy','плоский, без свечения']].map(([k,n,d])=>`<button class="sw ${(S.ui||'new')==k?'on':''}" data-k=${k} style="--sc:var(--a);--sg:${k=='new'?'linear-gradient(135deg,var(--a),var(--a2))':'#5b6578'}"><i></i>${n}<small>${d}</small></button>`).join('');$('#uis').onclick=e=>{const b=e.target.closest('.sw');if(b){S.ui=b.dataset.k;save();applyUI();sett()}};
  $('#ani').textContent=S.noanim?'Включить анимации':'Отключить анимации';$('#ani').onclick=()=>{S.noanim=!S.noanim;save();applyUI();sett()};
+ $('#lgs').innerHTML=[['ru','Русский'],['en','English']].map(([k,n])=>'<button class="sw'+((S.lang||'ru')==k?' on':'')+'" data-k='+k+' style="--sc:var(--a)"><i></i>'+n+'</button>').join('');$('#lgs').onclick=e=>{const b=e.target.closest('.sw');if(b&&b.dataset.k!=(S.lang||'ru')){S.lang=b.dataset.k;save();location.reload()}};$('#ppv').onclick=()=>showPolicy(true);
  $('#pfs').innerHTML=[['auto','Авто','подбирается сам'],['on','Экономный','без размытия и бликов'],['off','Полный','всё включено']].map(([k,n,d])=>`<button class="sw ${(S.perf||'auto')==k?'on':''}" data-k=${k} style="--sc:var(--a);--sg:${{auto:'linear-gradient(90deg,var(--a) 50%,#5b6578 50%)',on:'var(--a)',off:'linear-gradient(135deg,var(--a),var(--a2))'}[k]}"><i></i>${n}<small>${d}</small></button>`).join('');$('#pfs').onclick=e=>{const b=e.target.closest('.sw');if(b){S.perf=b.dataset.k;save();applyUI();sett()}};
  $('#pfi').textContent='Сейчас: '+(document.documentElement.classList.contains('lite')?'экономный':'полный')+' режим'+((window.CSS&&CSS.supports&&CSS.supports('color','color-mix(in srgb,red,blue)'))?'':' · браузер старый: часть оформления упрощена, лучше обновить')+(window.__fps?' · на главной ≈ '+window.__fps+' кадров/с'+(window.__fps2?' (в экономном ≈ '+window.__fps2+')':''):'');
- $('#prt').innerHTML=TH.map((x,i)=>[x,i]).sort((a,b)=>(a[0][4]?100:a[0][2])-(b[0][4]?100:b[0][2])).map(([x,i])=>`<button class="sw ${(S.theme||0)==i?'on':''}" ${thOk(x)?'':'disabled'} data-i=${i} style="--sc:${x[1]};${x[5]?'--sg:linear-gradient(135deg,'+x[5].join(',')+')':''}"><i></i>${x[0]}<small>${thOk(x)?'':thTxt(x)}</small></button>`).join('')+LT.map(t=>{const o=ltOk(t);return `<button class=\"sw ${S.theme=='L:'+t[0]?'on':''}\" ${o?'':'disabled'} data-i=\"L:${t[0]}\" style=\"--sc:${t[2]};--sg:linear-gradient(135deg,${t[4].join(',')})\"><i></i>${o?t[1]:'???'}<small>${o?'секретный':'код'}</small></button>`}).join('');
+ $('#prt').innerHTML=TH.map((x,i)=>[x,i]).sort((a,b)=>(a[0][4]?100:a[0][2])-(b[0][4]?100:b[0][2])).map(([x,i])=>`<button class="sw ${(S.theme||0)==i?'on':''}" ${thOk(x)?'':'disabled'} data-i=${i} style="--sc:${x[1]};${x[5]?'--sg:linear-gradient(135deg,'+x[5].join(',')+')':''}"><i></i>${x[0]}<small>${thOk(x)?'':thTxt(x)}</small></button>`).join('')+LT.filter(t=>!t[5]||ltOk(t)).map(t=>{const o=ltOk(t);return `<button class=\"sw ${S.theme=='L:'+t[0]?'on':''}\" ${o?'':'disabled'} data-i=\"L:${t[0]}\" style=\"--sc:${t[2]};--sg:linear-gradient(135deg,${t[4].join(',')})\"><i></i>${o?t[1]:'???'}<small>${o?'секретный':'код'}</small></button>`}).join('');
  $('#prt').onclick=e=>{const b=e.target.closest('.sw');if(b&&!b.disabled){S.theme=b.dataset.i.startsWith('L:')?b.dataset.i:+b.dataset.i;save();applyTh();sett()}}}
 const TM={mole:25,gonogo:20};
 function modHud(st,id){if(S.ui=='legacy')return;const h=st.querySelector('.hud');if(!h)return;
@@ -629,11 +639,11 @@ function open(g){show('game');$('#gt').textContent=g.n;S.dif=S.dif||{};let D=S.d
  const pk=e=>{const r=sw.getBoundingClientRect(),i=Math.max(0,Math.min(2,Math.floor((e.clientX-r.left)/r.width*3)));if(i!=D){D=i;S.dif[g.id]=D;save();upd();SFX.pop()}};
  sw.onpointerdown=e=>{sw.setPointerCapture(e.pointerId);pk(e)};sw.onpointermove=e=>{if(e.buttons)pk(e)};
  $('#go').onclick=()=>{st.innerHTML='';g.run(st,r=>fin(g,r,D),D);modHud(st,g.id)}}
-function fin(g,r,D=1){clearAll();const key=g.id+(D==1?'':D?'_h':'_e'),pv=S.best[key],rec=pv==null||(g.low?r.val<pv:r.val>pv);if(rec){S.best[key]=r.val;if(D>0)S.recs=(S.recs||0)+1;if(D==2)S.hrecs=(S.hrecs||0)+1}if(D==2)S.hd=(S.hd||0)+1;
+function fin(g,r,D=1){clearAll();if(r.bot||rxBad(g.id,r.val))return rxInvalid(g,r,D);const key=g.id+(D==1?'':D?'_h':'_e'),pv=S.best[key],rec=pv==null||(g.low?r.val<pv:r.val>pv);if(rec){S.best[key]=r.val;if(D>0)S.recs=(S.recs||0)+1;if(D==2)S.hrecs=(S.hrecs||0)+1}if(D==2)S.hd=(S.hd||0)+1;
  const L0=lvl(S.xp),ex=[],st0=stars(g.id),k=today(),y=new Date(Date.now()-864e5).toISOString().slice(0,10);
  if(S.last!=k){S.streak=S.last==y?S.streak+1:1;S.last=k}S.maxStreak=Math.max(S.maxStreak||0,S.streak);
  const isD=dod().id==g.id,sb=Math.min(50,S.streak*5),gain=Math.round((r.xp*(isD?2:1)+(rec?r.xp*.25:0))*(1+sb/100)*[.7,1,1.5][D]);
- S.xp+=gain;S.plays++;S.pg[g.id]=(S.pg[g.id]||0)+1;if(isD)S.dod=(S.dod||0)+1;
+ S.xp+=gain;S.plays++;S.pg[g.id]=(S.pg[g.id]||0)+(MINP[g.id]==null||r.val>=MINP[g.id]?1:0);if(isD)S.dod=(S.dod||0)+1;
  if(stars(g.id)>st0){S.xp+=50;ex.push(['star','Звезда мастерства: '+g.n+' · +50 XP'])}
  const d=dq();d.plays++;d.xp+=gain;d.g[g.id]=(d.g[g.id]||0)+1;if(rec)d.rec++;
  todayQ().forEach(i=>{const q=Q[i];if(!d.done[i]&&q[2](d)>=q[1]){d.done[i]=1;S.qd=(S.qd||0)+1;S.xp+=q[3];d.xp+=q[3];ex.push(['check','Задание: '+q[0]+' · +'+q[3]+' XP'])}});
@@ -650,15 +660,15 @@ function fin(g,r,D=1){clearAll();const key=g.id+(D==1?'':D?'_h':'_e'),pv=S.best[
  <button class=btn id=ag>Ещё раз</button><button class="btn s" id=mn>В меню</button></div>`;
  $('#ag').onclick=()=>open(g);$('#mn').onclick=home}
 $('#back').onclick=()=>curF?fold(curF):home();
-$('#rst').onclick=()=>{if(confirm('Удалить весь прогресс?')){S={xp:0,plays:0,streak:0,last:'',best:{},ach2:{},pg:{},lim:S.lim||[],ui:S.ui,noanim:S.noanim,perf:S.perf,rev:S.rev||0,user:S.user};save();pushSave(true);applyTh();home()}};
+$('#rst').onclick=()=>{if(confirm('Удалить весь прогресс?')){resetLocal(true);save();pushSave(true);home()}};
 document.querySelectorAll('.bk').forEach(b=>b.innerHTML=ico('back',18)+' В меню');const hh=()=>{const h=$('header');document.documentElement.style.setProperty('--hh',(getComputedStyle(h).position=='sticky'?h.offsetHeight:0)+'px')};hh();addEventListener('resize',hh);$('#si').innerHTML=ico('gear',18);$('#pi').innerHTML=ico('user',18);$('#ti').innerHTML=ico('trophy',18);mu();acc();$('#ai').innerHTML=ico('medal',18);$('#prb').onclick=$('#acb').onclick=$('#stb').onclick=$('#fdb').onclick=()=>home();$('#sb').onclick=$('#pst').onclick=sett;$('#pf').onclick=prof;$('#vo').oninput=e=>{S.vol=e.target.value/100;save()};$('#vo').onchange=()=>SFX.hit();$('#ab').onclick=achs;const fixS=()=>{S.lim=S.lim||[];S.ach2=S.ach2||{};S.pg=S.pg||{};S.best=S.best||{}};
 const sync=()=>{const o=rdk('reflex1');if(o&&(o.rev||0)>(S.rev||0)){S=o;fixS();head();if(!$('#home').hidden)home()}};
 addEventListener('storage',e=>{if(e.key=='reflex1')sync()});document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync()});addEventListener('focus',sync);
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 const clean=()=>{const o={...S};delete o.user;return o};
 let pTm=0;pushQ=()=>{clearTimeout(pTm);pTm=setTimeout(()=>pushSave(false),4000)};
-async function pushSave(force){if(!S.user||!ON())return;try{const r=await api('rx_save',{p_token:S.user.token,p_data:clean(),p_force:!!force});if(r&&r.conflict)adopt(r.data,'Найден более новый прогресс в облаке')}catch(e){}}
-function adopt(d,msg){const u=S.user,rev=Math.max(d.rev||0,S.rev||0)+1;S={...d,user:u};fixS();S.rev=rev;try{localStorage.setItem('reflex1',JSON.stringify(S))}catch(e){}applyTh();head();if(!$('#home').hidden)home();toast(msg)}
+async function pushSave(force){if(!S.user||!ON())return false;try{const r=await api('rx_save',{p_token:S.user.token,p_data:clean(),p_force:!!force});if(r&&r.conflict)adopt(r.data,'Найден более новый прогресс в облаке');return true}catch(e){return false}}
+function adopt(d,msg){const u=S.user,rev=Math.max(d.rev||0,S.rev||0)+1,k={};['ui','noanim','perf','lang','pol'].forEach(x=>{if(S[x]!==undefined)k[x]=S[x]});S={...d,user:u,...k};fixS();S.rev=rev;try{localStorage.setItem('reflex1',JSON.stringify(S))}catch(e){}applyTh();head();if(!$('#home').hidden)home();toast(msg)}
 async function pullSave(){if(!S.user||!ON())return;try{const d=await api('rx_load',{p_token:S.user.token});if(d&&(d.plays||0)>(S.plays||0))adopt(d,'Прогресс загружен из облака');else await pushSave(false)}catch(e){}}
 $('#cdm').onclick=async()=>{if(!ON())return toast('Сервер не подключён');try{const c=await api('rx_code_make',{p_data:clean(),p_token:S.user?S.user.token:null});$('#cl').innerHTML='Твой код: <b>'+esc(c)+'</b> · действует 30 минут, один раз. Введи его на другом устройстве в этом же поле. Новый код можно получить раз в час.';try{navigator.clipboard.writeText(c)}catch(e){}toast('Код создан')}catch(e){toast(e.message)}};
 $('#cdb').onclick=async()=>{const c=$('#cdi').value.trim();if(!c)return;if(!ON())return toast('Сервер не подключён');
@@ -666,9 +676,9 @@ $('#cdb').onclick=async()=>{const c=$('#cdi').value.trim();if(!c)return;if(!ON()
   if(r.type=='save'){if(confirm('Заменить текущий прогресс прогрессом из кода?')){adopt(r.data,'Прогресс загружен по коду');save();pushSave(true)}}
   else{const L0=lvl(S.xp),t=r.theme&&LT.find(t=>t[0]==r.theme);S.xp+=r.xp||0;if(t&&!ltOk(t)){S.lim=S.lim||[];S.lim.push(t[0]);S.theme='L:'+t[0];applyTh()}save();head();SFX.win();toast(t?'Секретный цвет: '+t[1]+(r.xp?' · +'+r.xp+' XP':''):'Промокод: +'+r.xp+' XP'+(lvl(S.xp)>L0?' · новый уровень!':''));if(!$('#sts').hidden)sett()}
   $('#cdi').value=''}catch(e){toast(e.message)}};
-applyTh();$('#ngo').onclick=runNet;$('#ntb').onclick=openNet;$('#nx').onclick=()=>{S.nskip=1;save();$('#nd').close()};home();pullSave();if(!S.net&&!S.nskip)setTimeout(openNet,600);
+applyTh();$('#ngo').onclick=runNet;$('#ntb').onclick=openNet;$('#nx').onclick=()=>{S.nskip=1;save();$('#nd').close()};home();pullSave();checkStatus();if(!S.net&&!S.nskip&&S.pol)setTimeout(openNet,600);
 
-/* v2.4.1: производительность и ПК */
+/* v2.5.4: производительность и ПК */
 (()=>{const R=document.documentElement;
  if('IntersectionObserver' in window){R.classList.add('io');const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('vis',e.isIntersecting)),{rootMargin:'80px'});let q=0;const ob=()=>{q=0;document.querySelectorAll('.card:not([data-o])').forEach(c=>{c.dataset.o=1;io.observe(c)})};const mo=new MutationObserver(()=>{if(!q){q=1;requestAnimationFrame(ob)}});['home','fds'].forEach(i=>mo.observe($('#'+i),{childList:true,subtree:true}));ob()}
  try{if(localStorage.getItem('rx_slow')=='1')window.__slow=1}catch(e){}applyPerf();
@@ -678,8 +688,445 @@ applyTh();$('#ngo').onclick=runNet;$('#ntb').onclick=openNet;$('#nx').onclick=()
    window.__slow=1;applyPerf();setTimeout(()=>pr(b=>{window.__fps2=Math.round(1000/b);sv(b<a*.9?1:0)}),400)})},1500);
  document.addEventListener('keydown',e=>{if(e.key!='Escape'||document.querySelector('dialog[open]'))return;const v=['game','fds','lbs','acs','prs','sts'].find(i=>!$('#'+i).hidden);if(!v)return;v=='game'?$('#back').click():home()})})();
 
-/* v2.4.1: уведомление для старых браузеров */
+/* v2.5.4: уведомление для старых браузеров */
 (()=>{if(!window.__old)return;try{if(localStorage.getItem('rx_oldok'))return}catch(e){}const m=document.querySelector('main')||document.body,d=document.createElement('div');d.className='old';d.innerHTML='<span>Браузер или система устарели: часть оформления упрощена, лучше обновить браузер. Игры работают.</span><button>Понятно</button>';d.querySelector('button').onclick=()=>{try{localStorage.setItem('rx_oldok',1)}catch(e){}d.remove()};m.prepend(d)})();
+
+/* v2.5.4: проверка результатов, аккаунт, политика, язык */
+var LIM={light:['<',100],target:['<',150],stroop:['<',250],arrow:['<',120],nums:['<',6],odd:['>',80],mole:['>',80],gonogo:['>',80],simon:['>',60],pairs:['>',800],digits:['>',30],cells:['>',40],chimp:['>',25],words:['>',400],missing:['>',300],order:['>',60]},MINP={odd:5,mole:5,gonogo:5};
+function rxBad(id,v){const l=LIM[id];return !!l&&Number.isFinite(v)&&(l[0]=='<'?v<l[1]:v>l[1])}
+function rxInvalid(g,r,D){$('#stage').innerHTML='<div class=res><p>'+g.n+' · '+['Лёгкий','Нормальный','Сложный'][D]+'</p><div class=big>—</div><p><b>Результат не засчитан</b></p><p>'+(r.bot?'Слишком равномерные нажатия: похоже на автокликер.':'Так быстро (или так много) не бывает.')+'</p><button class=btn id=ag>Ещё раз</button><button class="btn s" id=mn>В меню</button></div>';$('#ag').onclick=()=>open(g);$('#mn').onclick=home;SFX.bad()}
+function resetLocal(kl){const u=S.user,k={ui:S.ui,noanim:S.noanim,perf:S.perf,lang:S.lang,pol:S.pol,vol:S.vol,mute:S.mute,net:S.net,nskip:S.nskip,ep:S.ep};Object.keys(k).forEach(x=>{if(k[x]===undefined)delete k[x]});if(kl){k.lim=S.lim||[];if(typeof S.theme=='string'&&(S.lim||[]).includes(S.theme.slice(2)))k.theme=S.theme}S={xp:0,plays:0,streak:0,last:'',best:{},ach2:{},pg:{},...k,rev:(S.rev||0)+1,user:u};fixS();applyTh()}
+async function loginLoad(){try{const d=await api('rx_load',{p_token:S.user.token});if(d&&typeof d=='object'&&Object.keys(d).length)adopt(d,'Прогресс аккаунта загружен');else await pushSave(true)}catch(e){toast('Не удалось загрузить прогресс из облака')}}
+async function checkStatus(){if(!ON())return;try{const st=await api('rx_status',{p_token:S.user?S.user.token:null});window.ACC=st;if(S.user&&st.valid===false){S.user=null;save();acc();toast('Сессия закончилась, войди заново')}const ep=Math.max(st.epoch||0,st.pepoch||0);if(ep>(S.ep||0)){const fresh=!S.plays&&!S.xp;resetLocal(true);S.ep=ep;save();if(!fresh)toast('Прогресс был сброшен');home()}}catch(e){}}
+function accInfo(){if(!S.user)return;if(!window.ACC){if(!window.__acq){window.__acq=1;checkStatus().then(()=>{window.__acq=0;if(!$('#prs').hidden)prof()})}return}const a=window.ACC,f=d=>{const x=new Date(d);return String(x.getDate()).padStart(2,'0')+'.'+String(x.getMonth()+1).padStart(2,'0')+'.'+x.getFullYear()};
+ let h='<p class=nt>'+(a.created?'Аккаунт создан: '+f(a.created):'Аккаунт создан до обновления 2.5')+'</p>';if(a.pre25)h+='<p class=nt>Играл до обновления 2.5</p>';
+ if(a.pre25&&!(S.lim||[]).includes('legacy'))h+='<p class=nt>Для тебя есть тема Legacy: введи код LEGACYTHEME в Настройки → Облако и коды.</p>';
+ h+='<button class="btn s" id=del>Удалить аккаунт</button>';$('#pri').insertAdjacentHTML('beforeend',h);$('#del').onclick=delAcc}
+async function delAcc(){if(!confirm('Удалить аккаунт навсегда? Ник, результаты и облачный прогресс будут удалены. Это нельзя отменить.'))return;const pw=prompt('Введи пароль от аккаунта для подтверждения');if(!pw)return;try{await api('rx_delete',{p_token:S.user.token,p_pass:pw});S.user=null;window.ACC=null;resetLocal(false);save();acc();home();toast('Аккаунт удалён')}catch(e){toast(e.message)}}
+var POL={ru:`<p>Это честное описание того, какие данные хранит игра «Рефлекс». Это не юридическая консультация.</p>
+<h3>На твоём устройстве</h3><p>Прогресс, рекорды, достижения и настройки хранятся в памяти браузера (localStorage). Пока ты не вошёл в аккаунт, они не покидают устройство.</p>
+<h3>Если ты создаёшь аккаунт</h3><p>На сервере (Supabase) хранятся: ник, хеш пароля (сам пароль не хранится и не читается), копия твоего прогресса, лучшие результаты, опыт, дата создания аккаунта и введённые тобой коды. Ник и результаты видны всем игрокам в таблице лидеров. Не используй настоящее имя и пароли от других сервисов: пароль нельзя восстановить.</p>
+<h3>Что мы не собираем</h3><p>E-mail, телефон, геолокацию. В игре нет рекламы, трекеров и аналитики. Данные не продаются.</p>
+<h3>Бесплатно и без рекламы</h3><p>Игра полностью бесплатна: в ней нет рекламы, и платить за использование не нужно.</p>
+<h3>Третьи лица</h3><p>Игра не передаёт твои данные третьим лицам: не продаёт их, не показывает рекламу и не подключает аналитику. Технически данные обрабатывают только сервисы, на которых работает сайт (см. ниже).</p>
+<h3>Статус игры</h3><p>Игра находится в активном тестировании. Баги возможны, в том числе в официальных публичных версиях, а прогресс может быть сброшен при обновлениях. Нашёл ошибку? Нажми «Сообщить об ошибке» в настройках: откроется форма Google Forms, отправить её можно без входа в аккаунт и анонимно. Ник и контакты указывать необязательно.</p>
+<h3>Сторонние сервисы</h3><p>Шрифты загружаются с Google Fonts, поэтому Google видит твой IP-адрес и данные браузера, как при открытии любого сайта. Форма сообщений об ошибках работает на Google Forms: всё, что ты в неё напишешь, получают владелец игры и Google. Сайт размещён на GitHub Pages, данные аккаунтов — в Supabase; у них свои политики.</p>
+<h3>Прогресс гостя и выход</h3><p>Прогресс гостя не считается: при входе в аккаунт он заменяется прогрессом аккаунта, а при выходе прогресс на устройстве сбрасывается (он остаётся в аккаунте).</p>
+<h3>Удаление данных</h3><p>Аккаунт можно удалить в разделе «Аккаунт»: ник, результаты и облачный прогресс удаляются. Данные на устройстве стираются кнопкой «Сбросить прогресс» или очисткой данных сайта в браузере. Администратор может сбросить прогресс игроков при обновлениях.</p>
+<h3>Результаты и честная игра</h3><p>Нереальные результаты и признаки автокликера не засчитываются, а подозрительные записи могут быть удалены.</p>
+<p><b>Продолжая, ты подтверждаешь, что прочитал(а) эту политику.</b></p>`,en:`<p>This is an honest description of what data the game “Reflex” keeps. It is not legal advice.</p>
+<h3>On your device</h3><p>Progress, records, achievements and settings are stored in the browser (localStorage). Until you log in they never leave your device.</p>
+<h3>If you create an account</h3><p>The server (Supabase) stores: nickname, a password hash (the password itself is never stored or read), a copy of your progress, best results, XP, account creation date and the codes you entered. Your nickname and results are visible to all players on the leaderboard. Do not use your real name or passwords from other services: a password cannot be recovered.</p>
+<h3>What we do not collect</h3><p>E-mail, phone number, location. There are no ads, trackers or analytics. Data is not sold.</p>
+<h3>Free and ad-free</h3><p>The game is completely free: there are no ads and you never have to pay to use it.</p>
+<h3>Third parties</h3><p>The game does not pass your data to third parties: it does not sell it, show ads or use analytics. Technically, data is processed only by the services the site runs on (see below).</p>
+<h3>Status of the game</h3><p>The game is under active testing. Bugs are possible, including in official public versions, and progress may be reset during updates. Found a bug? Press “Report a bug” in settings: a Google Forms page opens, and you can send it without logging in and anonymously. Nickname and contacts are optional.</p>
+<h3>Third-party services</h3><p>Fonts are loaded from Google Fonts, so Google sees your IP address and browser data, as with any website. The bug report form runs on Google Forms: whatever you write there is received by the game owner and Google. The site is hosted on GitHub Pages and account data lives in Supabase; they have their own policies.</p>
+<h3>Guest progress and logging out</h3><p>Guest progress does not count: when you log in it is replaced by the account’s progress, and when you log out the progress on this device is reset (it stays in the account).</p>
+<h3>Deleting data</h3><p>You can delete your account in the “Account” section: nickname, results and cloud progress are removed. Data on the device is erased with “Reset progress” or by clearing site data in the browser. The administrator may reset players’ progress during updates.</p>
+<h3>Results and fair play</h3><p>Unrealistic results and signs of auto-clickers are not counted, and suspicious entries may be removed.</p>
+<p><b>By continuing you confirm that you have read this policy.</b></p>`};
+function showPolicy(view){const d=$('#pp'),b=$('#ppb'),o=$('#ppo'),c=$('#ppc'),l=$('#ppl'),en=S.lang=='en';b.innerHTML=en?POL.en:POL.ru;$('#ppt').textContent=en?'Privacy policy':'Политика конфиденциальности';$('#ppl span').textContent=en?'I have read the policy and agree':'Я прочитал(а) политику и согласен(на)';
+ d.oncancel=e=>{if(!view)e.preventDefault()};
+ if(view){l.style.display='none';l.hidden=true;o.disabled=false;o.textContent=en?'Close':'Закрыть';o.onclick=()=>d.close()}
+ else{l.hidden=false;l.style.display='flex';c.checked=false;c.disabled=true;l.style.opacity=.5;o.disabled=true;o.textContent=en?'Accept and play':'Принять и играть';const chk=()=>{if(b.scrollTop+b.clientHeight>=b.scrollHeight-8){c.disabled=false;l.style.opacity=1}};b.onscroll=chk;setTimeout(chk,150);c.onchange=()=>{o.disabled=!c.checked};o.onclick=()=>{S.pol=Date.now();save();d.close();if(!S.net&&!S.nskip)setTimeout(openNet,600)}}
+ if(!d.open)d.showModal();b.scrollTop=0}
+function showConsent(){const d=$('#pc'),en=S.lang=='en',pn=en?'privacy policy':'политику конфиденциальности',lk='<a href="#" class="pcl" style="color:var(--a);text-decoration:underline">'+pn+'</a>';
+ d.innerHTML='<b style="font:800 16px var(--D)">'+(en?'Before you play':'Перед игрой')+'</b><p style="margin:12px 0">'+(en?'To play, accept the ':'Чтобы играть, прими ')+lk+'.</p><label style="display:flex;gap:8px;align-items:center;margin:10px 0"><input type="checkbox" id="pcc" style="width:auto"><span>'+(en?'I accept the ':'Я принимаю ')+lk+'</span></label><button class="btn" id="pco" disabled>'+(en?'Accept and play':'Принять и играть')+'</button>';
+ d.oncancel=e=>e.preventDefault();d.querySelectorAll('.pcl').forEach(a=>a.onclick=e=>{e.preventDefault();e.stopPropagation();showPolicy(true)});
+ $('#pcc').onchange=()=>{$('#pco').disabled=!$('#pcc').checked};$('#pco').onclick=()=>{S.pol=Date.now();save();d.close();if(!S.net&&!S.nskip)setTimeout(openNet,600)};d.showModal()}
+if(!S.pol)showConsent();
+addEventListener('focus',()=>{if(Date.now()-(window.__cs||0)>3e5){window.__cs=Date.now();checkStatus()}});
+/* язык */
+var EN=null,ENR=[],DICT=`РЕФЛЕКС|REFLEX
+Лидеры|Leaders
+Достижения|Achievements
+Настройки|Settings
+Войти|Log in
+Выйти|Log out
+Задания дня|Daily quests
+Папки|Folders
+Аккаунт|Account
+Ранги|Ranks
+Цвет интерфейса|Interface color
+Звук|Sound
+Громкость|Volume
+Оформление|Appearance
+Производительность|Performance
+Если сайт тормозит, включи «Экономный»: уберутся размытие и фоновые блики, остальное останется как есть|If the site lags, enable “Economy”: blur and background glows are removed, everything else stays the same
+Цвета открываются за уровни и достижения|Colors unlock with levels and achievements
+Проверка связи|Connection check
+Запустить тест|Run test
+Облако и коды|Cloud and codes
+Применить код|Apply code
+Получить код переноса|Get transfer code
+Код действует 30 минут и срабатывает один раз. Если ты вошёл в аккаунт, новый код можно получить раз в час.|The code is valid for 30 minutes and works once. If you are logged in, you can get a new code once per hour.
+Данные|Data
+Сбросить прогресс|Reset progress
+Язык|Language
+Политика конфиденциальности|Privacy policy
+Сообщить об ошибке|Report a bug
+Принять и играть|Accept and play
+Я прочитал(а) политику и согласен(на)|I have read the policy and agree
+Удалить аккаунт|Delete account
+Достижения:|Achievements:
+Таблица лидеров|Leaderboard
+Создать аккаунт|Create account
+Отмена|Cancel
+Начать тест|Start test
+Закрыть|Close
+Код переноса или промокод|Transfer code or promo code
+Ник (3–16: буквы, цифры, _)|Nickname (3–16: letters, digits, _)
+Пароль (от 6 символов)|Password (6+ characters)
+Прогресс гостя не считается: после входа он заменится прогрессом аккаунта, у нового аккаунта прогресс начинается с нуля.|Guest progress does not count: after logging in it is replaced by the account’s progress; a new account starts from zero.
+В меню|Menu
+Старт|Start
+Ещё раз|Again
+Включить анимации|Enable animations
+Отключить анимации|Disable animations
+Авто|Auto
+Экономный|Economy
+Полный|Full
+подбирается сам|picked automatically
+без размытия и бликов|no blur or glows
+всё включено|everything on
+объёмные плитки, свечение|raised tiles, glow
+плоский, без свечения|flat, no glow
+Лёгкий|Easy
+Нормальный|Normal
+Сложный|Hard
+Новый рекорд! +25% XP|New record! +25% XP
+Игра дня ×2|Game of the day ×2
+Привет, игрок|Hello, player
+Гость — войди, чтобы попасть в таблицу лидеров. Прогресс гостя не считается|Guest — log in to join the leaderboard. Guest progress does not count
+Завершено|Completed
+Все|All
+Общие|General
+Реакция|Reaction
+Память|Memory
+Скорость|Speed
+Мозг|Brain
+8 игр на скорость реакции|8 games for reaction speed
+8 игр, которые тренируют память|8 games that train memory
+Время|Time
+Очки|Score
+очки|score
+Цель|Target
+Раунд|Round
+Ошибки|Errors
+ошибки|errors
+Длина|Length
+Рекорд|Record
+Верно|Correct
+Уровень|Level
+Пар|Pairs
+Чисел|Numbers
+Цифр|Digits
+Ищи|Find
+из|of
+игр|games
+рекордов|records
+дн. подряд|day streak
+лучшая серия|best streak
+достижений|achievements
+уровень|level
+Получено|Done
+Загрузка…|Loading…
+Пока пусто. Стань первым!|Empty so far. Be the first!
+Общий XP|Total XP
+Сервер не подключён|Server not connected
+Код создан|Code created
+Прогресс был сброшен|Progress was reset
+Ты вышел из аккаунта|You logged out
+Аккаунт удалён|Account deleted
+Прогресс аккаунта загружен|Account progress loaded
+Прогресс загружен из облака|Progress loaded from the cloud
+Выйти из аккаунта? Прогресс на этом устройстве сбросится, он сохранён в аккаунте. Прогресс гостя не считается.|Log out? Progress on this device will be reset; it is saved in the account. Guest progress does not count.
+Не удалось сохранить прогресс в облаке. Выйти всё равно? Несохранённое пропадёт.|Could not save progress to the cloud. Log out anyway? Unsaved progress will be lost.
+Удалить весь прогресс?|Delete all progress?
+Удалить аккаунт навсегда? Ник, результаты и облачный прогресс будут удалены. Это нельзя отменить.|Delete the account forever? Nickname, results and cloud progress will be removed. This cannot be undone.
+Введи пароль от аккаунта для подтверждения|Enter the account password to confirm
+Заменить текущий прогресс прогрессом из кода?|Replace the current progress with the progress from the code?
+Браузер или система устарели: часть оформления упрощена, лучше обновить браузер. Игры работают.|Your browser or system is outdated: some visuals are simplified, please update your browser. Games work.
+Понятно|Got it
+Новичок|Novice
+Ученик|Apprentice
+Боец|Fighter
+Охотник|Hunter
+Мастер|Master
+Ниндзя|Ninja
+Гроссмейстер|Grandmaster
+Легенда|Legend
+Бог реакции|God of reaction
+Золото|Gold
+Бирюза|Turquoise
+Малина|Raspberry
+Неон|Neon
+Фиолет|Violet
+Лёд|Ice
+Коралл|Coral
+Изумруд|Emerald
+Океан|Ocean
+Мандарин|Tangerine
+Сакура|Sakura
+Индиго|Indigo
+Роза|Rose
+Платина|Platinum
+Лава|Lava
+Янтарь|Amber
+Сирень|Lilac
+Небо|Sky
+Закат|Sunset
+Космос|Cosmos
+Ультра|Ultra
+Галактика|Galaxy
+Сыграй 5 игр|Play 5 games
+Сыграй в 3 разные игры|Play 3 different games
+Побей личный рекорд|Beat a personal record
+Набери 150 XP сегодня|Earn 150 XP today
+Сыграй 3 раза в одну игру|Play one game 3 times
+Сыграй 8 раз за день|Play 8 times in a day
+Меткость|Accuracy
+Внимание|Attention
+Зрение|Vision
+Координация|Coordination
+Контроль|Control
+Поиск|Search
+Последовательность|Sequence
+Зрительная память|Visual memory
+Рабочая память|Working memory
+Пространство|Space
+Порядок|Order
+Серия предметов|Item series
+Словесная память|Verbal memory
+Запоминание|Memorizing
+Светофор|Traffic light
+Жди зелёного и жми как можно быстрее. 5 раундов.|Wait for green and tap as fast as you can. 5 rounds.
+Ожидание 1–2,5 с|Wait 1–2.5 s
+Ожидание 1,2–3,6 с|Wait 1.2–3.6 s
+Ожидание 0,8–5 с, момент трудно угадать|Wait 0.8–5 s, hard to predict
+Мишени|Targets
+Попади в 15 целей. После попадания видно время реакции.|Hit 15 targets. Your reaction time is shown after each hit.
+Крупные мишени|Large targets
+Обычные мишени|Normal targets
+Мелкие мишени|Small targets
+Цвета|Colors
+Нажми квадрат того цвета, в который окрашено слово (а не того, что написано).|Tap the square of the color the word is painted in (not the one it says).
+8 раундов, цвет часто совпадает со словом|8 rounds, color often matches the word
+10 раундов|10 rounds
+14 раундов|14 rounds
+Оттенки|Shades
+Найди плитку другого оттенка. Ошибка отнимает секунды.|Find the tile of a different shade. A mistake costs seconds.
+40 секунд, поле до 5×5, заметная разница|40 seconds, grid up to 5×5, obvious difference
+30 секунд, поле до 6×6|30 seconds, grid up to 6×6
+25 секунд, поле до 7×7, тонкая разница|25 seconds, grid up to 7×7, subtle difference
+Кроты|Moles
+Бей кротов, пока они не спрятались. 25 секунд, с каждым попаданием они появляются всё быстрее.|Hit the moles before they hide. 25 seconds, they appear faster with every hit.
+Кроты задерживаются дольше|Moles stay longer
+Стандартная скорость|Standard speed
+Кроты быстрые и появляются часто|Fast moles that appear often
+Стрелки|Arrows
+Нажимай стрелку на клавиатуре или кнопку, соответствующую показанной.|Press the arrow key or button that matches the shown arrow.
+10 раундов|10 rounds
+15 раундов|15 rounds
+20 раундов|20 rounds
+Круги|Circles
+Жми зелёные круги, обходи красные (−2 очка). 20 секунд.|Tap green circles, avoid red ones (−2 points). 20 seconds.
+Круги живут 2 с, красных мало|Circles live 2 s, few red ones
+Круги живут 1,6 с|Circles live 1.6 s
+Круги живут 1,1 с, красных много|Circles live 1.1 s, many red ones
+Числа|Numbers
+Нажми числа по возрастанию как можно быстрее. Ошибка: +1 с.|Tap the numbers in ascending order as fast as you can. Mistake: +1 s.
+Числа 1–9|Numbers 1–9
+Числа 1–16|Numbers 1–16
+Числа 1–25|Numbers 1–25
+Симон|Simon
+Запомни порядок вспышек и повтори его. С каждым разом на одну больше.|Remember the order of flashes and repeat it. One more each time.
+4 плитки, медленно|4 tiles, slow
+4 плитки|4 tiles
+6 плиток, быстро|6 tiles, fast
+Пары|Pairs
+Открывай карточки и находи одинаковые пары. Меньше ошибок и быстрее — больше очков.|Flip cards and find matching pairs. Fewer mistakes and faster means more points.
+6 пар|6 pairs
+8 пар|8 pairs
+12 пар|12 pairs
+Цифры|Digits
+Запомни число и набери его. Каждый раз цифр больше.|Remember the number and type it. One more digit each time.
+0,9 с на цифру|0.9 s per digit
+0,7 с на цифру|0.7 s per digit
+0,5 с на цифру|0.5 s per digit
+Клетки|Cells
+Клетки загораются на миг: запомни и отметь их. Сколько клеток загорится, заранее неизвестно.|Cells light up for a moment: remember and mark them. You can’t know in advance how many will light up.
+Поле 3×3, 3 жизни|3×3 grid, 3 lives
+Поле 4×4, 3 жизни|4×4 grid, 3 lives
+Поле 5×5, 2 жизни|5×5 grid, 2 lives
+Шимпанзе|Chimp
+Числа появляются на поле. Нажми 1, и остальные скроются: нажимай по порядку по памяти.|Numbers appear on the board. Tap 1 and the rest hide: tap in order from memory.
+3 жизни, поле поменьше|3 lives, smaller board
+3 жизни|3 lives
+2 жизни|2 lives
+Слова|Words
+Слова идут по одному. Было это слово раньше или нет? Ошибки отнимают жизни.|Words appear one by one. Have you seen this word before? Mistakes cost lives.
+3 жизни, слов меньше|3 lives, fewer words
+2 жизни, слов больше|2 lives, more words
+Было|Seen
+Новое|New
+Пропажа|Missing
+Запомни, какой предмет где лежит. Один исчезнет: вспомни, что стояло на пустом месте.|Remember where each item lies. One will vanish: recall what stood in the empty spot.
+3 жизни, долгий показ|3 lives, long preview
+1 жизнь, быстрый показ|1 life, short preview
+Смотри, какие значки появляются по очереди, и потом нажми их в том же порядке.|Watch which icons appear one by one, then tap them in the same order.
+3 жизни, 0,9 с на значок|3 lives, 0.9 s per icon
+2 жизни, 0,7 с|2 lives, 0.7 s
+1 жизнь, 0,55 с|1 life, 0.55 s
+Запоминай|Memorize
+Твой ход|Your turn
+Верно!|Correct!
+Мимо!|Miss!
+Ошибка|Mistake
+Найди одинаковые|Find matching ones
+Набери число|Type the number
+Теперь по порядку|Now in order
+Нажми 1|Tap 1
+Это слово уже было?|Seen this word before?
+Результат не засчитан|Result not counted
+Первый шаг|First step
+Сыграй 1 раз|Play once
+Разогрев|Warm-up
+Сыграй 10 раз|Play 10 times
+Ветеран|Veteran
+Сыграй 50 раз|Play 50 times
+Легенда зала|Hall legend
+Сыграй 200 раз|Play 200 times
+Универсал|All-rounder
+Попробуй все 8 игр Реакции|Try all 8 Reaction games
+Специалист|Specialist
+10 раз сыграй в одну игру|Play one game 10 times
+Горячая серия|Hot streak
+3 дня подряд|3 days in a row
+Неделя огня|Week of fire
+7 дней подряд|7 days in a row
+Железная воля|Iron will
+30 дней подряд|30 days in a row
+Молния|Lightning
+Светофор быстрее 340 мс|Traffic light under 340 ms
+Быстрее света|Faster than light
+Светофор быстрее 300 мс|Traffic light under 300 ms
+Снайпер|Sniper
+Мишени быстрее 450 мс|Targets under 450 ms
+Колорист|Colorist
+Цвета быстрее 900 мс|Colors under 900 ms
+Орлиный глаз|Eagle eye
+Оттенки: 12 очков|Shades: 12 points
+Кроты: 33 очка|Moles: 33 points
+Рефлексы кота|Cat reflexes
+Стрелки быстрее 600 мс|Arrows under 600 ms
+Хладнокровие|Cool head
+Круги: 14 очков|Circles: 14 points
+Скоростной счёт|Speed counting
+Числа быстрее 25 с|Numbers under 25 s
+Рекордсмен|Record breaker
+Побей рекорды 10 раз|Break records 10 times
+Уровень 5|Level 5
+Достигни 5 уровня|Reach level 5
+Уровень 10|Level 10
+Достигни 10 уровня|Reach level 10
+Копилка|Piggy bank
+Набери 5000 XP|Earn 5000 XP
+Квестер|Questor
+Выполни 10 заданий дня|Complete 10 daily quests
+Три звезды|Three stars
+Получи 3 звезды в одной игре Реакции|Get 3 stars in one Reaction game
+Мастер зала|Hall master
+Собери 12 звёзд мастерства в Реакции|Collect 12 mastery stars in Reaction
+Игра дня|Game of the day
+Сыграй в игру дня 5 раз|Play the game of the day 5 times
+Кладоискатель|Treasure hunter
+Открой 7 сундуков дня|Open 7 daily chests
+Две недели|Two weeks
+14 дней подряд|14 days in a row
+Уровень 15|Level 15
+Достигни 15 уровня|Reach level 15
+Смелый|Bold
+Сыграй 1 раз на Сложном|Play once on Hard
+Закалённый|Hardened
+Сыграй 10 раз на Сложном|Play 10 times on Hard
+Покоритель|Conqueror
+Сыграй на Сложном во все 8 игр Реакции|Play all 8 Reaction games on Hard
+Лестница|Ladder
+Пройди одну игру Реакции на всех трёх сложностях|Play one Reaction game on all three difficulties
+Бесстрашный|Fearless
+Поставь 5 рекордов на Сложном|Set 5 records on Hard
+Первая звезда|First star
+Получи первую звезду мастерства в Реакции|Get your first mastery star in Reaction
+Шесть звёзд|Six stars
+Собери 6 звёзд мастерства в Реакции|Collect 6 mastery stars in Reaction
+Ровный строй|Even lineup
+Получи 2 звезды в каждой игре Реакции|Get 2 stars in every Reaction game
+Разминка|Stretching
+Сыграй на Лёгком во все 8 игр Реакции|Play all 8 Reaction games on Easy
+Железные нервы|Nerves of steel
+Сыграй 25 раз на Сложном|Play 25 times on Hard
+На всех уровнях|On every level
+Пройди все 8 игр Реакции на всех трёх сложностях|Play all 8 Reaction games on all three difficulties
+Король реакции|King of reaction
+Заверши папку «Реакция»: 3 звезды во всех играх|Complete the “Reaction” folder: 3 stars in every game
+Цепкая память|Sticky memory
+Симон: длина 9|Simon: length 9
+Парный охотник|Pair hunter
+Пары: 600 очков|Pairs: 600 points
+Телефонная книга|Phone book
+Цифры: 8 цифр|Digits: 8 digits
+Фотографическая|Photographic
+Клетки: 6 уровней|Cells: 6 levels
+Умнее шимпанзе|Smarter than a chimp
+Шимпанзе: 9 чисел|Chimp: 9 numbers
+Лента памяти|Memory ribbon
+Порядок: 8 значков|Order: 8 icons
+Словарный запас|Vocabulary
+Слова: 25 верных|Words: 25 correct
+Детектив|Detective
+Пропажа: 10 верных|Missing: 10 correct
+Эрудит|Scholar
+Попробуй все 8 игр Памяти|Try all 8 Memory games
+Тренировка ума|Brain workout
+Сыграй 10 раз в игры Памяти|Play Memory games 10 times
+Острый ум|Sharp mind
+Сыграй 50 раз в игры Памяти|Play Memory games 50 times
+Звёзды разума|Stars of the mind
+Собери 6 звёзд мастерства в Памяти|Collect 6 mastery stars in Memory
+Мастер памяти|Memory master
+Собери 12 звёзд мастерства в Памяти|Collect 12 mastery stars in Memory
+Стальной разум|Steel mind
+Сыграй на Сложном во все 8 игр Памяти|Play all 8 Memory games on Hard
+Король памяти|King of memory
+Заверши папку «Память»: 3 звезды во всех играх|Complete the “Memory” folder: 3 stars in every game
+Полный зал|Full house
+Заверши обе папки: «Реакция» и «Память»|Complete both folders: “Reaction” and “Memory”
+Первая искра|First spark
+Получи первую звезду мастерства в Памяти|Get your first mastery star in Memory
+Три звезды ума|Three stars of the mind
+Получи 3 звезды в одной игре Памяти|Get 3 stars in one Memory game
+Ровный ум|Even mind
+Получи 2 звезды в каждой игре Памяти|Get 2 stars in every Memory game
+Лёгкая разминка|Easy warm-up
+Сыграй на Лёгком во все 8 игр Памяти|Play all 8 Memory games on Easy
+Три ступени|Three steps
+Пройди одну игру Памяти на всех трёх сложностях|Play one Memory game on all three difficulties`;
+function un(v){return String(v).replace(/(\d)\s?мс/g,'$1 ms').replace(/(\d)\s?очк\./g,'$1 pts').replace(/(\d) с(?![а-яё])/gi,'$1 s')}
+function tr(t){if(typeof t!=='string'||S.lang!=='en'||!EN)return t;const m=t.match(/^(\s*)([\s\S]*?)(\s*)$/),c=m[2];if(!c)return t;let v=EN[c];if(v===undefined){for(const r of ENR){const x=c.match(r[0]);if(x){v=r[1](x);break}}}return v===undefined?t:m[1]+v+m[3]}
+function trNode(n){if(S.lang!=='en')return;if(n.nodeType==3){const v=tr(n.nodeValue);if(v!==n.nodeValue)n.nodeValue=v}else if(n.nodeType==1&&n.tagName!='SCRIPT'&&n.tagName!='STYLE'&&!n.classList.contains('cdt')){['placeholder','title'].forEach(a=>{const o=n.getAttribute(a);if(o){const v=tr(o);if(v!==o)n.setAttribute(a,v)}});n.childNodes.forEach(trNode)}}
+if(S.lang==='en'){EN={};DICT.split('\n').forEach(l=>{const i=l.indexOf('|');if(i>0)EN[l.slice(0,i)]=l.slice(i+1)});
+ ENR=[[/^Рекорд: (.+)$/,m=>'Record: '+un(m[1])],[/^Найдено: (\d+)$/,m=>'Found: '+m[1]],[/^Поймано кротов: (\d+)$/,m=>'Moles caught: '+m[1]],[/^Среднее: (.+), ошибок: (\d+)$/,m=>'Average: '+un(m[1])+', errors: '+m[2]],
+ [/^Достижение: (.+?)( · \+\d+ XP)?$/,m=>'Achievement: '+tr(m[1])+(m[2]||'')],[/^Звезда мастерства: (.+?) · \+50 XP$/,m=>'Mastery star: '+tr(m[1])+' · +50 XP'],[/^Задание: (.+?) · \+(\d+) XP$/,m=>'Quest: '+tr(m[1])+' · +'+m[2]+' XP'],
+ [/^Новый цвет интерфейса: (.+)$/,m=>'New interface color: '+tr(m[1])],[/^Новый ранг: (.+)$/,m=>'New rank: '+tr(m[1])],[/^Секретный цвет: (.+)$/,m=>'Secret color: '+tr(m[1])],[/^Уровень (\d+)!$/,m=>'Level '+m[1]+'!'],[/^Ур\. (\d+) · (.+)$/,m=>'Lv. '+m[1]+' · '+tr(m[2])],
+ [/^с (\d+) ур\.$/,m=>'from lv. '+m[1]],[/^Аккаунт создан: (.+)$/,m=>'Account created: '+m[1]],[/^Аккаунт создан до обновления 2\.5$/,()=>'Account created before update 2.5'],[/^Играл до обновления 2\.5$/,()=>'Played before update 2.5'],
+ [/^Для тебя есть тема Legacy: введи код LEGACYTHEME в Настройки → Облако и коды\.$/,()=>'There is a Legacy theme for you: enter the code LEGACYTHEME in Settings → Cloud and codes.'],[/^Ты вошёл как (.+)\. Прогресс гостя не считается$/,m=>'Logged in as '+m[1]+'. Guest progress does not count'],
+ [/^Осталось: (\d+)$/,m=>'Left: '+m[1]],[/^Отметь клетки: (\d+)$/,m=>'Mark the cells: '+m[1]],[/^Запоминай · (\d+)$/,m=>'Memorize · '+m[1]],[/^Дальше: (\d+)$/,m=>'Next: '+m[1]],[/^Было (\d+)$/,m=>'Was '+m[1]],
+ [/^Время: (.+) с, ошибок: (\d+)$/,m=>'Time: '+m[1]+' s, errors: '+m[2]],[/^Верных ответов: (\d+)$/,m=>'Correct answers: '+m[1]],[/^Пройдено уровней: (\d+)$/,m=>'Levels completed: '+m[1]],[/^Длина последовательности: (\d+)$/,m=>'Sequence length: '+m[1]],
+ [/^(\d+) XP · рекорд: (.+)$/,m=>m[1]+' XP · record: '+un(m[2])],[/^Серия \+(\d+)%$/,m=>'Streak +'+m[1]+'%'],[/^Сундук дня: \+(\d+) XP$/,m=>'Daily chest: +'+m[1]+' XP']];
+ trNode(document.body);new MutationObserver(ms=>{for(const m of ms){m.addedNodes.forEach(trNode);if(m.type=='characterData')trNode(m.target)}}).observe(document.body,{childList:true,subtree:true,characterData:true});
+ const _cf=window.confirm,_pr=window.prompt;window.confirm=m=>_cf.call(window,tr(m));window.prompt=(m,d)=>_pr.call(window,tr(m),d);document.documentElement.lang='en'}
 </script>
 </body>
 </html>
